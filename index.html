@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piyush Kr — Discord Bot Developer</title>
+  <meta name="description" content="Piyush Kr — security-focused Discord bot developer from New Delhi, India. Building bots, tools and modern web apps." />
+
+  <!-- ============================================================
+       CONFIG — swap these for your real links / handles
+       ============================================================ -->
+  <!--
+    Discord user link    : search "discord.com/users" below
+    GitHub link          : search "github.com/" below
+    Spotify link         : search "open.spotify.com" below
+    Email (Work With Me) : search "mailto:" below
+    Rebiton invite / app : search "discord.gg/" or the project buttons below
+    -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="assets/images/avatar.png" type="image/png" />
+</head>
+<body>
+  <!-- ===================== LOADER ===================== -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-mark">Piyush&nbsp;<span class="suffix">_._</span></div>
+      <div class="loader-text">Loading portfolio</div>
+      <div class="loader-bar"><span class="loader-fill"></span></div>
+    </div>
+  </div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#home">Piyush&nbsp;<span class="suffix">_._</span></a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Let's Talk</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home">
+      <div class="hero-left">
+        <p class="eyebrow reveal">Discord Developer · New Delhi, India</p>
+        <h1 class="reveal">Piyush <em class="last">Kr<span class="suffix">_._</span></em></h1>
+        <p class="meta reveal">@Piyush on Discord&nbsp;&nbsp;·&nbsp;&nbsp;18 y/o&nbsp;&nbsp;·&nbsp;&nbsp;IST (UTC+5:30)</p>
+        <p class="lede reveal">
+          <strong>I build security-focused Discord bots</strong> that protect communities, automate
+          moderation, and scale to thousands of users. Expert in <strong>Python &amp; discord.py</strong>,
+          currently going deep into <strong>Next.js, React &amp; TypeScript</strong>. Known for clean
+          architecture, advanced security systems, and shipping real products independently.
+        </p>
+        <div class="cta reveal">
+          <a class="btn btn-solid" href="https://github.com/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.35.96.11-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            GitHub
+          </a>
+          <a class="btn btn-ghost" href="#projects">View Projects</a>
+          <a class="btn btn-ghost" href="#contact">Get In Touch</a>
+        </div>
+      </div>
+
+      <!-- Profile / activity card -->
+      <aside class="profile reveal" aria-label="Profile">
+        <div class="profile-head">
+          <div class="avatar">
+            <img src="assets/images/avatar.png" alt="Piyush" width="88" height="88" />
+            <span class="status-dot offline" title="Offline"></span>
+          </div>
+          <div class="profile-id">
+            <div class="profile-name">Piyush</div>
+            <div class="profile-role">Developer</div>
+            <div class="profile-loc">📍 New Delhi · IST (UTC+5:30)</div>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="activity-row">
+            <span class="activity-label">Discord Activity</span>
+            <span class="activity-state">
+              <span class="dot-emoji">😴</span>
+              <span class="activity-value">Offline</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="activity spotify">
+          <div class="activity-row">
+            <span class="activity-label">Spotify</span>
+            <span class="activity-state">
+              <span class="dot-emoji">🎵</span>
+              <span class="activity-value">Not listening</span>
+            </span>
+          </div>
+          <div class="spotify-row">
+            <div class="spotify-art">♪</div>
+            <div class="spotify-meta">
+              <div class="spotify-user">Piyush</div>
+              <div class="spotify-track">Not listening</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-socials">
+          <a href="https://discord.com/users/000000000000000000" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.88-1.51.07.07 0 0 0-.08.04c-.21.37-.44.86-.6 1.25a18.27 18.27 0 0 0-5.44 0 12.6 12.6 0 0 0-.61-1.25.08.08 0 0 0-.08-.04 19.74 19.74 0 0 0-4.88 1.51.07.07 0 0 0-.03.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.05 19.9 19.9 0 0 0 6 3.03.08.08 0 0 0 .08-.03c.46-.63.87-1.3 1.23-2a.08.08 0 0 0-.04-.11 13.1 13.1 0 0 1-1.88-.9.08.08 0 0 1-.01-.13c.13-.1.25-.19.37-.29a.08.08 0 0 1 .08-.01c3.94 1.8 8.2 1.8 12.1 0a.08.08 0 0 1 .08.01c.12.1.25.2.38.29a.08.08 0 0 1-.01.13c-.6.35-1.23.65-1.88.9a.08.08 0 0 0-.04.11c.36.7.77 1.37 1.23 2a.08.08 0 0 0 .08.03 19.85 19.85 0 0 0 6.01-3.03.08.08 0 0 0 .03-.05c.5-5.19-.85-9.68-3.57-13.66a.06.06 0 0 0-.03-.03ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.96 0c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Z"/></svg>
+            Discord
+          </a>
+          <a href="https://github.com/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.35.96.11-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            GitHub
+          </a>
+          <a href="https://open.spotify.com/user/you" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0Zm5.5 17.36c-.22.36-.7.47-1.06.25-2.9-1.77-6.55-2.17-10.85-1.19-.42.1-.83-.16-.93-.58-.1-.42.16-.83.58-.93 4.7-1.08 8.74-.61 12 1.37.36.22.47.71.26 1.08Zm1.47-3.27c-.28.45-.88.6-1.33.32-3.32-2.04-8.38-2.63-12.3-1.44-.52.16-1.06-.14-1.22-.66-.16-.52.14-1.06.66-1.22 4.48-1.36 10.06-.7 13.87 1.64.45.28.6.88.32 1.36Zm.13-3.4C15.29 8.2 8.6 8 4.75 9.17c-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 4.4-1.33 11.72-1.07 16.29 1.61.56.33.74 1.06.41 1.62-.33.55-1.06.73-1.62.4Z"/></svg>
+            Spotify
+          </a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ===================== STATS ===================== -->
+    <section class="stats" aria-label="Stats">
+      <div class="stat reveal"><span class="stat-num" data-count="3" data-suffix="+">0</span><span class="stat-label">Projects</span></div>
+      <div class="stat reveal"><span class="stat-num" data-count="3" data-suffix="yr">0</span><span class="stat-label">Experience</span></div>
+      <div class="stat reveal"><span class="stat-num" data-count="15" data-suffix="+">0</span><span class="stat-label">Client Served</span></div>
+      <div class="stat reveal"><span class="stat-num" data-count="18">0</span><span class="stat-label">Years Old</span></div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section" id="skills">
+      <div class="sec-head reveal">
+        <span class="sec-num">01</span>
+        <h2>Skills &amp; Stack</h2>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card reveal">
+          <div class="skill-emoji">🐍</div>
+          <h3>Python &amp; discord.py</h3>
+          <p>Primary expertise. Building production-grade Discord bots with advanced async architecture, complex systems, and real-world scale.</p>
+          <div class="tags">
+            <span>Python</span><span>discord.py</span><span>PostgreSQL</span><span>REST APIs</span>
+          </div>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-emoji">⚡</div>
+          <h3>Web Dev (Learning)</h3>
+          <p>Actively going deep into the modern web stack — shipping projects with Next.js, React &amp; TypeScript as the next chapter.</p>
+          <div class="tags">
+            <span>Next.js</span><span>React</span><span>TypeScript</span><span>JavaScript</span><span>HTML/CSS</span>
+          </div>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-emoji">🔧</div>
+          <h3>Tools &amp; Infrastructure</h3>
+          <p>Comfortable shipping independently — version control, Linux servers, Cloudflare hosting, and the full developer toolchain.</p>
+          <div class="tags">
+            <span>Git &amp; GitHub</span><span>Cloudflare</span><span>Linux</span><span>VS Code</span><span>APIs</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects">
+      <div class="sec-head reveal">
+        <span class="sec-num">02</span>
+        <h2>Projects</h2>
+      </div>
+
+      <div class="projects">
+        <!-- Rebiton — featured -->
+        <article class="project project-featured reveal">
+          <div class="project-body">
+            <div class="project-main">
+              <div class="project-id">
+                <img class="project-logo" src="assets/images/rebiton-logo.png" alt="Rebiton logo" width="52" height="52" />
+                <span class="badge badge-active"><span class="badge-dot"></span>Active — Current</span>
+              </div>
+              <h3 class="project-title">Rebiton<span class="tm">™</span></h3>
+              <p class="project-desc">
+                Advanced security &amp; multipurpose Discord bot focused on protecting communities with
+                real-time moderation, logging, anti-raid systems, and premium tools.
+              </p>
+              <div class="tags">
+                <span>Python</span><span>discord.py</span><span>Security</span><span>Anti-Raid</span><span>Multipurpose</span><span>Premium</span>
+              </div>
+              <ul class="feature-list">
+                <li><strong>Anti-Nuke</strong><span>Real-time protection</span></li>
+                <li><strong>AutoMod</strong><span>Spam &amp; scam control</span></li>
+                <li><strong>Premium</strong><span>Custom power tools</span></li>
+              </ul>
+              <div class="project-actions">
+                <a class="btn btn-solid btn-sm" href="https://discord.gg/yourinvite" target="_blank" rel="noopener">Get Access</a>
+                <!-- ^ replace "yourinvite" with your server invite -->
+                <a class="btn btn-ghost btn-sm" href="#projects">View Project</a>
+              </div>
+            </div>
+
+            <div class="project-media">
+              <img class="project-banner" src="assets/images/rebiton-banner.jpg" alt="Rebiton banner" loading="lazy" />
+              <ul class="media-features">
+                <li>🔒 <strong>Anti-Nuke</strong> mass action protection</li>
+                <li>🛡️ <strong>Anti-Raid</strong> auto moderation protection</li>
+                <li>🎟️ <strong>Tools</strong> tickets, giveaways, moderation, welcomer, selfroles, customroles, etc...</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ind Editor -->
+        <article class="project project-compact reveal">
+          <div class="project-media">
+            <img class="project-banner" src="assets/images/indeditor-banner.jpg" alt="Ind Editor banner" loading="lazy" />
+            <img class="project-logo overlap" src="assets/images/indeditor-logo.png" alt="Ind Editor logo" width="56" height="56" />
+          </div>
+          <div class="project-main compact">
+            <div class="project-id">
+              <span class="badge badge-building"><span class="badge-dot"></span>In Development</span>
+            </div>
+            <h3 class="project-title">Ind Editor</h3>
+            <p class="project-desc">
+              A fast, modern code editor app — clean workspace, syntax highlighting and an
+              interface built for actually shipping things.
+            </p>
+            <div class="tags">
+              <span>Next.js</span><span>React</span><span>TypeScript</span><span>Editor</span>
+            </div>
+            <div class="project-actions">
+              <a class="btn btn-solid btn-sm" href="#projects">Open App</a>
+              <a class="btn btn-ghost btn-sm" href="#projects">View Project</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== JOURNEY ===================== -->
+    <section class="section" id="journey">
+      <div class="sec-head reveal">
+        <span class="sec-num">03</span>
+        <h2>Journey</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-body">
+            <h3>Started Discord Bot Development</h3>
+            <p>Picked up Python and discord.py, started building automation tools for Discord servers. Quickly realised this was more than a hobby.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-body">
+            <h3>Shipped My First Production Bots</h3>
+            <p>Launched complete, production-grade bots for real communities — handling moderation, logging and automation at scale.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-year">2024</div>
+          <div class="timeline-body">
+            <h3>Built Rebiton™ — Current Major Project</h3>
+            <p>Designed and shipped the most advanced bot yet. Rebiton™ focuses on enterprise-grade security, actively serving communities today.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-year">2025 <span class="arrow">→</span> Now</div>
+          <div class="timeline-body">
+            <h3>Expanding Into Full-Stack Web Dev</h3>
+            <p>Going deeper on Python architecture while building with Next.js, React, and TypeScript — shipping Ind Editor as the next chapter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section" id="contact">
+      <div class="sec-head reveal">
+        <span class="sec-num">04</span>
+        <h2>Get In Touch</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-cards">
+          <a class="contact-card reveal" href="https://discord.com/users/000000000000000000" target="_blank" rel="noopener">
+            <span class="contact-ico">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.88-1.51.07.07 0 0 0-.08.04c-.21.37-.44.86-.6 1.25a18.27 18.27 0 0 0-5.44 0 12.6 12.6 0 0 0-.61-1.25.08.08 0 0 0-.08-.04 19.74 19.74 0 0 0-4.88 1.51.07.07 0 0 0-.03.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.05 19.9 19.9 0 0 0 6 3.03.08.08 0 0 0 .08-.03c.46-.63.87-1.3 1.23-2a.08.08 0 0 0-.04-.11 13.1 13.1 0 0 1-1.88-.9.08.08 0 0 1-.01-.13c.13-.1.25-.19.37-.29a.08.08 0 0 1 .08-.01c3.94 1.8 8.2 1.8 12.1 0a.08.08 0 0 1 .08.01c.12.1.25.2.38.29a.08.08 0 0 1-.01.13c-.6.35-1.23.65-1.88.9a.08.08 0 0 0-.04.11c.36.7.77 1.37 1.23 2a.08.08 0 0 0 .08.03 19.85 19.85 0 0 0 6.01-3.03.08.08 0 0 0 .03-.05c.5-5.19-.85-9.68-3.57-13.66a.06.06 0 0 0-.03-.03ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.96 0c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Z"/></svg>
+            </span>
+            <span class="contact-label">Discord</span>
+            <span class="contact-value">Piyush</span>
+          </a>
+
+          <a class="contact-card reveal" href="https://github.com/" target="_blank" rel="noopener">
+            <span class="contact-ico">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.35.96.11-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            </span>
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">GitHub</span>
+          </a>
+
+          <a class="contact-card reveal" href="https://open.spotify.com/user/you" target="_blank" rel="noopener">
+            <span class="contact-ico">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0Zm5.5 17.36c-.22.36-.7.47-1.06.25-2.9-1.77-6.55-2.17-10.85-1.19-.42.1-.83-.16-.93-.58-.1-.42.16-.83.58-.93 4.7-1.08 8.74-.61 12 1.37.36.22.47.71.26 1.08Zm1.47-3.27c-.28.45-.88.6-1.33.32-3.32-2.04-8.38-2.63-12.3-1.44-.52.16-1.06-.14-1.22-.66-.16-.52.14-1.06.66-1.22 4.48-1.36 10.06-.7 13.87 1.64.45.28.6.88.32 1.36Zm.13-3.4C15.29 8.2 8.6 8 4.75 9.17c-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 4.4-1.33 11.72-1.07 16.29 1.61.56.33.74 1.06.41 1.62-.33.55-1.06.73-1.62.4Z"/></svg>
+            </span>
+            <span class="contact-label">Spotify</span>
+            <span class="contact-value">Spotify</span>
+          </a>
+        </div>
+
+        <div class="contact-info reveal">
+          <div class="loc">
+            <span class="loc-ico">📍</span>
+            <div>
+              <div class="loc-label">Location</div>
+              <div class="loc-value">New Delhi, India · IST</div>
+            </div>
+          </div>
+          <h3>Need a custom Discord bot?</h3>
+          <p>Security systems, moderation tools, music bots, dashboards, or automation workflows — let's build something clean and scalable.</p>
+          <a class="btn btn-solid" href="mailto:you@example.com">Work With Me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a class="brand" href="#home">Piyush&nbsp;<span class="suffix">_._</span></a>
+      <p>Built with Python expertise &amp; shipped on the web. © 2026 Piyush Kr.</p>
+      <a class="to-top" href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
