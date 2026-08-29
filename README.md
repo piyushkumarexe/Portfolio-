@@ -1,43 +1,46 @@
-# Piyush Kr — Portfolio
+# Portfolio
 
-A dark, Discord-bot-developer style single-page portfolio, rebuilt 1:1 in structure
-and look from a reference design and personalised for **Piyush Kr**.
+Personal portfolio site for **Piyush Kumar** — Coder & Developer building mobile apps, Discord bots and automations.
 
-## Structure
+A dark, developer-themed, responsive single-page portfolio built with plain **HTML, CSS & JavaScript**. No framework, no build step.
 
-```
-index.html            — full page markup
-assets/style.css      — theme, layout, animations
-assets/main.js        — loader, scroll reveal, counters, presence (Lanyard)
-assets/images/        — avatar, project logos & banners
-```
+## ✨ Features
 
-## Sections
+- Animated hero with a status card & gradient stats
+- Skills / stack grid
+- Projects (IND Editor, Rebiton bot)
+- Journey timeline
+- Contact section (Discord, Instagram, Email, GitHub)
+- Responsive (mobile menu, grid → single column)
+- Reveal-on-scroll & reduced-motion support
+- Custom "Piyush" developer avatar (`assets/piyush-avatar.png`)
 
-- Hero (name, meta, intro, CTA) + profile card (Discord activity + Spotify)
-- Stats (Projects / Experience / Client Served / Years Old)
-- 01 · Skills & Stack
-- 02 · Projects — **Rebiton™** (Discord bot) and **Ind Editor** (code editor app)
-- 03 · Journey (timeline)
-- 04 · Get In Touch
-
-## Customise your details
-
-Open `index.html` and replace the placeholders:
-
-- Discord user link — search `discord.com/users/`
-- GitHub link — search `github.com/`
-- Spotify link — search `open.spotify.com`
-- Email — search `mailto:`
-
-For live Discord presence + Spotify, set your Discord user ID in
-`assets/main.js` → `DISCORD_ID` (uses the [Lanyard API](https://lanyard.rest)).
-It gracefully falls back to "Offline / Not listening" when unset.
-
-## Run locally
+## 🚀 Run locally
 
 ```bash
-python3 -m http.server 8000 --directory .
+python3 -m http.server 8080     # or: npx serve .
 ```
 
-Then open http://localhost:8000
+Then visit <http://localhost:8080>.
+
+## 📦 Deploy
+
+Fully static — deploy the folder to **Cloudflare Pages**, **Vercel**, **Netlify**, or **GitHub Pages** (no build command needed).
+
+## ✏️ Editing
+
+All content lives in `index.html`. Key pieces:
+
+- Hero name, strap, status card → `index.html`
+- Stats numbers (`data-target`) → `index.html`
+- Projects & links → `index.html`
+- Contact links (`Discord`, `Instagram`, `Email`) → `index.html`
+- Theme colours & fonts → `css/style.css` (`:root` tokens)
+- Loader, nav, reveal, counters → `js/main.js`
+
+### Contact details currently in the site
+
+- **Discord:** @piyushkumarexe
+- **Instagram:** @Piyushkumar.exee
+- **Email:** piyushpk811@gmail.com
+- **GitHub:** @piyushkumarexe

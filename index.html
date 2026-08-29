@@ -3,352 +3,358 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Piyush Kr — Discord Bot Developer</title>
-  <meta name="description" content="Piyush Kr — security-focused Discord bot developer from New Delhi, India. Building bots, tools and modern web apps." />
+  <title>Piyush Kumar — Coder & Developer</title>
+  <meta name="description" content="Piyush Kumar — Coder & Developer building apps, bots, and automations. India." />
+  <meta name="author" content="Piyush Kumar" />
 
-  <!-- ============================================================
-       CONFIG — swap these for your real links / handles
-       ============================================================ -->
-  <!--
-    Discord user link    : search "discord.com/users" below
-    GitHub link          : search "github.com/" below
-    Spotify link         : search "open.spotify.com" below
-    Email (Work With Me) : search "mailto:" below
-    Rebiton invite / app : search "discord.gg/" or the project buttons below
-    -->
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf6'/%3E%3Cstop offset='1' stop-color='%2367e8f9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0f'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='800' font-size='26' fill='url(%23g)' text-anchor='middle'%3EPK%3C/text%3E%3C/svg%3E" />
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="assets/style.css" />
-  <link rel="icon" href="assets/images/avatar.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- ===================== LOADER ===================== -->
-  <div id="loader" aria-hidden="true">
-    <div class="loader-inner">
-      <div class="loader-mark">Piyush&nbsp;<span class="suffix">_._</span></div>
-      <div class="loader-text">Loading portfolio</div>
-      <div class="loader-bar"><span class="loader-fill"></span></div>
-    </div>
+  <!-- ============================================================
+       LOADING
+       ============================================================ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <span class="loader--logo">Piyush.dev</span>
+    <span class="loader--text">Loading portfolio</span>
   </div>
 
-  <!-- ===================== NAVBAR ===================== -->
+  <a class="skip-link" href="#hero">Skip to content</a>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
   <header class="nav" id="nav">
-    <div class="nav-inner">
-      <a class="brand" href="#home">Piyush&nbsp;<span class="suffix">_._</span></a>
-      <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#journey">Journey</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a class="nav-cta" href="#contact">Let's Talk</a>
+    <a class="nav__brand" href="#hero" aria-label="Piyush Kumar home">
+      <img class="nav__logo" src="assets/piyush-avatar.png" alt="" width="34" height="34" />
+      <span class="nav__brand-text">Piyush<span class="accent">.dev</span></span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="#skills">Stack</a>
+      <a href="#projects">Projects</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="btn btn--ghost" href="https://github.com/piyushkumarexe" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
   <main>
-    <!-- ===================== HERO ===================== -->
-    <section class="hero" id="home">
-      <div class="hero-left">
-        <p class="eyebrow reveal">Discord Developer · New Delhi, India</p>
-        <h1 class="reveal">Piyush <em class="last">Kr<span class="suffix">_._</span></em></h1>
-        <p class="meta reveal">@Piyush on Discord&nbsp;&nbsp;·&nbsp;&nbsp;18 y/o&nbsp;&nbsp;·&nbsp;&nbsp;IST (UTC+5:30)</p>
-        <p class="lede reveal">
-          <strong>I build security-focused Discord bots</strong> that protect communities, automate
-          moderation, and scale to thousands of users. Expert in <strong>Python &amp; discord.py</strong>,
-          currently going deep into <strong>Next.js, React &amp; TypeScript</strong>. Known for clean
-          architecture, advanced security systems, and shipping real products independently.
-        </p>
-        <div class="cta reveal">
-          <a class="btn btn-solid" href="https://github.com/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.35.96.11-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-            GitHub
-          </a>
-          <a class="btn btn-ghost" href="#projects">View Projects</a>
-          <a class="btn btn-ghost" href="#contact">Get In Touch</a>
-        </div>
-      </div>
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero" id="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="chip"><span class="chip__dot"></span> Coder &amp; Developer · India</span>
 
-      <!-- Profile / activity card -->
-      <aside class="profile reveal" aria-label="Profile">
-        <div class="profile-head">
-          <div class="avatar">
-            <img src="assets/images/avatar.png" alt="Piyush" width="88" height="88" />
-            <span class="status-dot offline" title="Offline"></span>
-          </div>
-          <div class="profile-id">
-            <div class="profile-name">Piyush</div>
-            <div class="profile-role">Developer</div>
-            <div class="profile-loc">📍 New Delhi · IST (UTC+5:30)</div>
-          </div>
-        </div>
+          <h1 class="hero__name">
+            Piyush&nbsp;<span class="accent">Kumar</span>
+          </h1>
+          <p class="hero__meta">
+            <span>@piyushkumarexe</span> <span class="dot">·</span>
+            <span>building apps &amp; bots</span> <span class="dot">·</span>
+            <span>IST</span>
+          </p>
 
-        <div class="activity">
-          <div class="activity-row">
-            <span class="activity-label">Discord Activity</span>
-            <span class="activity-state">
-              <span class="dot-emoji">😴</span>
-              <span class="activity-value">Offline</span>
-            </span>
-          </div>
-        </div>
+          <p class="hero__desc">
+            I build <strong>mobile apps, Discord bots, and automations</strong> — from Flutter video
+            editors to production AI agents. I like clean code, real products, and shipping things
+            people actually use.
+          </p>
 
-        <div class="activity spotify">
-          <div class="activity-row">
-            <span class="activity-label">Spotify</span>
-            <span class="activity-state">
-              <span class="dot-emoji">🎵</span>
-              <span class="activity-value">Not listening</span>
-            </span>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="https://github.com/piyushkumarexe" target="_blank" rel="noopener">View Projects</a>
+            <a class="btn btn--outline" href="#contact">Get In Touch</a>
           </div>
-          <div class="spotify-row">
-            <div class="spotify-art">♪</div>
-            <div class="spotify-meta">
-              <div class="spotify-user">Piyush</div>
-              <div class="spotify-track">Not listening</div>
+
+          <!-- Stats -->
+          <div class="stats" role="list">
+            <div class="stat" role="listitem">
+              <b class="stat__num" data-target="4" data-suffix="+">0</b>
+              <span class="stat__label">Projects Built</span>
+            </div>
+            <div class="stat" role="listitem">
+              <b class="stat__num" data-target="3" data-suffix="+">0</b>
+              <span class="stat__label">Clients Served</span>
+            </div>
+            <div class="stat" role="listitem">
+              <b class="stat__num" data-target="1" data-suffix="yr">0</b>
+              <span class="stat__label">Experience</span>
             </div>
           </div>
         </div>
 
-        <div class="profile-socials">
-          <a href="https://discord.com/users/000000000000000000" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.88-1.51.07.07 0 0 0-.08.04c-.21.37-.44.86-.6 1.25a18.27 18.27 0 0 0-5.44 0 12.6 12.6 0 0 0-.61-1.25.08.08 0 0 0-.08-.04 19.74 19.74 0 0 0-4.88 1.51.07.07 0 0 0-.03.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.05 19.9 19.9 0 0 0 6 3.03.08.08 0 0 0 .08-.03c.46-.63.87-1.3 1.23-2a.08.08 0 0 0-.04-.11 13.1 13.1 0 0 1-1.88-.9.08.08 0 0 1-.01-.13c.13-.1.25-.19.37-.29a.08.08 0 0 1 .08-.01c3.94 1.8 8.2 1.8 12.1 0a.08.08 0 0 1 .08.01c.12.1.25.2.38.29a.08.08 0 0 1-.01.13c-.6.35-1.23.65-1.88.9a.08.08 0 0 0-.04.11c.36.7.77 1.37 1.23 2a.08.08 0 0 0 .08.03 19.85 19.85 0 0 0 6.01-3.03.08.08 0 0 0 .03-.05c.5-5.19-.85-9.68-3.57-13.66a.06.06 0 0 0-.03-.03ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.96 0c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Z"/></svg>
-            Discord
-          </a>
-          <a href="https://github.com/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.35.96.11-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-            GitHub
-          </a>
-          <a href="https://open.spotify.com/user/you" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0Zm5.5 17.36c-.22.36-.7.47-1.06.25-2.9-1.77-6.55-2.17-10.85-1.19-.42.1-.83-.16-.93-.58-.1-.42.16-.83.58-.93 4.7-1.08 8.74-.61 12 1.37.36.22.47.71.26 1.08Zm1.47-3.27c-.28.45-.88.6-1.33.32-3.32-2.04-8.38-2.63-12.3-1.44-.52.16-1.06-.14-1.22-.66-.16-.52.14-1.06.66-1.22 4.48-1.36 10.06-.7 13.87 1.64.45.28.6.88.32 1.36Zm.13-3.4C15.29 8.2 8.6 8 4.75 9.17c-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 4.4-1.33 11.72-1.07 16.29 1.61.56.33.74 1.06.41 1.62-.33.55-1.06.73-1.62.4Z"/></svg>
-            Spotify
-          </a>
-        </div>
-      </aside>
-    </section>
-
-    <!-- ===================== STATS ===================== -->
-    <section class="stats" aria-label="Stats">
-      <div class="stat reveal"><span class="stat-num" data-count="3" data-suffix="+">0</span><span class="stat-label">Projects</span></div>
-      <div class="stat reveal"><span class="stat-num" data-count="3" data-suffix="yr">0</span><span class="stat-label">Experience</span></div>
-      <div class="stat reveal"><span class="stat-num" data-count="15" data-suffix="+">0</span><span class="stat-label">Client Served</span></div>
-      <div class="stat reveal"><span class="stat-num" data-count="18">0</span><span class="stat-label">Years Old</span></div>
-    </section>
-
-    <!-- ===================== SKILLS ===================== -->
-    <section class="section" id="skills">
-      <div class="sec-head reveal">
-        <span class="sec-num">01</span>
-        <h2>Skills &amp; Stack</h2>
-      </div>
-
-      <div class="skills-grid">
-        <article class="skill-card reveal">
-          <div class="skill-emoji">🐍</div>
-          <h3>Python &amp; discord.py</h3>
-          <p>Primary expertise. Building production-grade Discord bots with advanced async architecture, complex systems, and real-world scale.</p>
-          <div class="tags">
-            <span>Python</span><span>discord.py</span><span>PostgreSQL</span><span>REST APIs</span>
-          </div>
-        </article>
-
-        <article class="skill-card reveal">
-          <div class="skill-emoji">⚡</div>
-          <h3>Web Dev (Learning)</h3>
-          <p>Actively going deep into the modern web stack — shipping projects with Next.js, React &amp; TypeScript as the next chapter.</p>
-          <div class="tags">
-            <span>Next.js</span><span>React</span><span>TypeScript</span><span>JavaScript</span><span>HTML/CSS</span>
-          </div>
-        </article>
-
-        <article class="skill-card reveal">
-          <div class="skill-emoji">🔧</div>
-          <h3>Tools &amp; Infrastructure</h3>
-          <p>Comfortable shipping independently — version control, Linux servers, Cloudflare hosting, and the full developer toolchain.</p>
-          <div class="tags">
-            <span>Git &amp; GitHub</span><span>Cloudflare</span><span>Linux</span><span>VS Code</span><span>APIs</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ===================== PROJECTS ===================== -->
-    <section class="section" id="projects">
-      <div class="sec-head reveal">
-        <span class="sec-num">02</span>
-        <h2>Projects</h2>
-      </div>
-
-      <div class="projects">
-        <!-- Rebiton — featured -->
-        <article class="project project-featured reveal">
-          <div class="project-body">
-            <div class="project-main">
-              <div class="project-id">
-                <img class="project-logo" src="assets/images/rebiton-logo.png" alt="Rebiton logo" width="52" height="52" />
-                <span class="badge badge-active"><span class="badge-dot"></span>Active — Current</span>
+        <!-- Status card -->
+        <div class="hero__side">
+          <div class="status-card">
+            <div class="status-card__top">
+              <img class="status-card__avatar" src="assets/piyush-avatar.png" alt="Piyush Kumar avatar" width="88" height="88" />
+              <div class="status-card__id">
+                <h2 class="status-card__name">Piyush</h2>
+                <p class="status-card__role">Developer · Coder</p>
               </div>
-              <h3 class="project-title">Rebiton<span class="tm">™</span></h3>
-              <p class="project-desc">
-                Advanced security &amp; multipurpose Discord bot focused on protecting communities with
-                real-time moderation, logging, anti-raid systems, and premium tools.
+            </div>
+
+            <div class="status-card__row">
+              <span>📍</span> India
+            </div>
+
+            <div class="status-widget">
+              <div class="status-widget__head">
+                <span class="status-widget__title">Currently</span>
+                <span class="status-widget__dot"></span>
+              </div>
+              <p class="status-widget__text">Building an <strong>AI Agent</strong> · learning Flutter &amp; full-stack.</p>
+              <div class="status-widget__tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Node</span>
+                <span class="tag">Python</span>
+              </div>
+            </div>
+
+            <div class="socials">
+              <a class="socials__link" href="https://github.com/piyushkumarexe" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+              </a>
+              <a class="socials__link" href="https://instagram.com/Piyushkumar.exee" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a class="socials__link" href="mailto:piyushpk811@gmail.com" aria-label="Email">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg>
+              </a>
+              <a class="socials__link" href="https://discord.com/users/89646078" target="_blank" rel="noopener" aria-label="Discord">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52.07.07 0 0 0-.08.04c-.21.38-.44.87-.6 1.27a18.3 18.3 0 0 0-5.5 0 12 12 0 0 0-.62-1.27.08.08 0 0 0-.08-.04 19.7 19.7 0 0 0-4.88 1.52.07.07 0 0 0-.04.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.05A19.9 19.9 0 0 0 5.03 20a.08.08 0 0 0 .08-.03c.6-.82 1.14-1.69 1.6-2.6a.08.08 0 0 0-.04-.11 13 13 0 0 1-1.25-.6.08.08 0 0 1-.01-.13l.25-.19a.07.07 0 0 1 .08-.01 14.2 14.2 0 0 0 11.5 0 .07.07 0 0 1 .07.01l.26.19a.08.08 0 0 1 0 .12 12 12 0 0 1-1.28.61.08.08 0 0 0-.04.11c.46.91 1 1.78 1.6 2.6a.08.08 0 0 0 .08.03 19.8 19.8 0 0 0 4.9-1.88.08.08 0 0 0 .03-.05c.5-5.18-.84-9.68-3.55-13.66a.06.06 0 0 0-.03-.03ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42s.96-2.42 2.16-2.42 2.18 1.09 2.16 2.42-.96 2.42-2.16 2.42Zm7.96 0c-1.18 0-2.16-1.08-2.16-2.42s.96-2.42 2.16-2.42 2.18 1.09 2.16 2.42-.96 2.42-2.16 2.42Z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         01 — STACK
+         ============================================================ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <p class="section__index">01</p>
+        <h2 class="section__title">Skills &amp; <span class="accent">Stack</span></h2>
+        <p class="section__sub">The tools I reach for.</p>
+
+        <div class="grid">
+          <article class="card">
+            <span class="card__icon">📱</span>
+            <h3 class="card__title">Mobile</h3>
+            <p class="card__text">Cross-platform &amp; native Android apps.</p>
+            <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Kotlin</span><span class="tag">Compose</span></div>
+          </article>
+
+          <article class="card">
+            <span class="card__icon">🤖</span>
+            <h3 class="card__title">Bots &amp; AI</h3>
+            <p class="card__text">Discord bots and AI agents.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">discord.py</span><span class="tag">Node.js</span><span class="tag">AI Agents</span></div>
+          </article>
+
+          <article class="card">
+            <span class="card__icon">⚡</span>
+            <h3 class="card__title">Web &amp; Backend</h3>
+            <p class="card__text">Responsive frontends and APIs.</p>
+            <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">HTML/CSS/JS</span></div>
+          </article>
+
+          <article class="card">
+            <span class="card__icon">🗄️</span>
+            <h3 class="card__title">Databases &amp; Tools</h3>
+            <p class="card__text">Data, auth, and the daily toolchain.</p>
+            <div class="tags"><span class="tag">MongoDB</span><span class="tag">MySQL</span><span class="tag">Firebase</span><span class="tag">Git &amp; GitHub</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         02 — PROJECTS
+         ============================================================ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <p class="section__index">02</p>
+        <h2 class="section__title">Projects</h2>
+        <p class="section__sub">Things I've built and shipped.</p>
+
+        <div class="projects">
+          <!-- IND Editor -->
+          <article class="project">
+            <div class="project__banner banner--ind" aria-hidden="true">
+              <span class="project__monogram">IND</span>
+            </div>
+            <div class="project__body">
+              <div class="project__head">
+                <span class="chip chip--active"><span class="chip__dot"></span> In Development</span>
+                <h3 class="project__title">IND Editor</h3>
+              </div>
+              <p class="project__desc">
+                A Flutter video-editing app for short videos, reels, and photo-video compositions. Timeline,
+                transitions, filters, text packs, PIP, audio &amp; up to 1080p/120fps export.
               </p>
               <div class="tags">
-                <span>Python</span><span>discord.py</span><span>Security</span><span>Anti-Raid</span><span>Multipurpose</span><span>Premium</span>
+                <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Firebase</span><span class="tag">FFmpeg</span>
               </div>
-              <ul class="feature-list">
-                <li><strong>Anti-Nuke</strong><span>Real-time protection</span></li>
-                <li><strong>AutoMod</strong><span>Spam &amp; scam control</span></li>
-                <li><strong>Premium</strong><span>Custom power tools</span></li>
+              <ul class="project__features">
+                <li>🎞️ Timeline &amp; clip editing</li>
+                <li>✨ Transitions &amp; effects</li>
+                <li>🔤 Text packs &amp; overlays</li>
               </ul>
-              <div class="project-actions">
-                <a class="btn btn-solid btn-sm" href="https://discord.gg/yourinvite" target="_blank" rel="noopener">Get Access</a>
-                <!-- ^ replace "yourinvite" with your server invite -->
-                <a class="btn btn-ghost btn-sm" href="#projects">View Project</a>
+              <div class="project__actions">
+                <a class="btn btn--outline" href="https://github.com/piyushkumarexe/IND-Editor-" target="_blank" rel="noopener">View Project</a>
               </div>
             </div>
+          </article>
 
-            <div class="project-media">
-              <img class="project-banner" src="assets/images/rebiton-banner.jpg" alt="Rebiton banner" loading="lazy" />
-              <ul class="media-features">
-                <li>🔒 <strong>Anti-Nuke</strong> mass action protection</li>
-                <li>🛡️ <strong>Anti-Raid</strong> auto moderation protection</li>
-                <li>🎟️ <strong>Tools</strong> tickets, giveaways, moderation, welcomer, selfroles, customroles, etc...</li>
+          <!-- Rebiton -->
+          <article class="project">
+            <div class="project__banner banner--rebiton" aria-hidden="true">
+              <span class="project__monogram">R</span>
+            </div>
+            <div class="project__body">
+              <div class="project__head">
+                <span class="chip chip--status"><span class="chip__dot"></span> Active</span>
+                <h3 class="project__title">Rebiton</h3>
+              </div>
+              <p class="project__desc">
+                An automatic <strong>AI agent</strong> bot — automates tasks, responds to commands, and helps run
+                communities without constant manual effort.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">discord.py</span><span class="tag">AI Agent</span><span class="tag">Automation</span>
+              </div>
+              <ul class="project__features">
+                <li>🧠 Automatic AI responses</li>
+                <li>🔄 Task automation</li>
+                <li>🛡️ Community tools</li>
               </ul>
+              <div class="project__actions">
+                <a class="btn btn--outline" href="https://github.com/piyushkumarexe" target="_blank" rel="noopener">View Project</a>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </div>
 
-        <!-- Ind Editor -->
-        <article class="project project-compact reveal">
-          <div class="project-media">
-            <img class="project-banner" src="assets/images/indeditor-banner.jpg" alt="Ind Editor banner" loading="lazy" />
-            <img class="project-logo overlap" src="assets/images/indeditor-logo.png" alt="Ind Editor logo" width="56" height="56" />
-          </div>
-          <div class="project-main compact">
-            <div class="project-id">
-              <span class="badge badge-building"><span class="badge-dot"></span>In Development</span>
-            </div>
-            <h3 class="project-title">Ind Editor</h3>
-            <p class="project-desc">
-              A fast, modern code editor app — clean workspace, syntax highlighting and an
-              interface built for actually shipping things.
-            </p>
-            <div class="tags">
-              <span>Next.js</span><span>React</span><span>TypeScript</span><span>Editor</span>
-            </div>
-            <div class="project-actions">
-              <a class="btn btn-solid btn-sm" href="#projects">Open App</a>
-              <a class="btn btn-ghost btn-sm" href="#projects">View Project</a>
-            </div>
-          </div>
-        </article>
+        <div class="more-projects">
+          <a class="btn btn--ghost" href="https://github.com/piyushkumarexe" target="_blank" rel="noopener">More on GitHub →</a>
+        </div>
       </div>
     </section>
 
-    <!-- ===================== JOURNEY ===================== -->
+    <!-- ============================================================
+         03 — JOURNEY
+         ============================================================ -->
     <section class="section" id="journey">
-      <div class="sec-head reveal">
-        <span class="sec-num">03</span>
-        <h2>Journey</h2>
-      </div>
+      <div class="container">
+        <p class="section__index">03</p>
+        <h2 class="section__title">Journey</h2>
+        <p class="section__sub">The road so far.</p>
 
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <div class="timeline-year">2022</div>
-          <div class="timeline-body">
-            <h3>Started Discord Bot Development</h3>
-            <p>Picked up Python and discord.py, started building automation tools for Discord servers. Quickly realised this was more than a hobby.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-year">2023</div>
-          <div class="timeline-body">
-            <h3>Shipped My First Production Bots</h3>
-            <p>Launched complete, production-grade bots for real communities — handling moderation, logging and automation at scale.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-year">2024</div>
-          <div class="timeline-body">
-            <h3>Built Rebiton™ — Current Major Project</h3>
-            <p>Designed and shipped the most advanced bot yet. Rebiton™ focuses on enterprise-grade security, actively serving communities today.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-year">2025 <span class="arrow">→</span> Now</div>
-          <div class="timeline-body">
-            <h3>Expanding Into Full-Stack Web Dev</h3>
-            <p>Going deeper on Python architecture while building with Next.js, React, and TypeScript — shipping Ind Editor as the next chapter.</p>
-          </div>
-        </div>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <div class="timeline__year">Start</div>
+            <div class="timeline__card">
+              <h3 class="timeline__title">Started Coding</h3>
+              <p class="timeline__text">Picked up Python and JavaScript and fell in love with building things that run.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__year">2024</div>
+            <div class="timeline__card">
+              <h3 class="timeline__title">First Real Apps</h3>
+              <p class="timeline__text">Moved from experiments to actual products — learned end-to-end shipping.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__year">2025</div>
+            <div class="timeline__card">
+              <h3 class="timeline__title">IND Editor &amp; Rebiton</h3>
+              <p class="timeline__text">Built a Flutter video editor and an AI agent bot, and started taking on clients.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__year">Now</div>
+            <div class="timeline__card">
+              <h3 class="timeline__title">Building the Next Thing</h3>
+              <p class="timeline__text">Going deeper into full-stack and AI — shipping more real products.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- ===================== CONTACT ===================== -->
+    <!-- ============================================================
+         04 — CONTACT
+         ============================================================ -->
     <section class="section" id="contact">
-      <div class="sec-head reveal">
-        <span class="sec-num">04</span>
-        <h2>Get In Touch</h2>
-      </div>
+      <div class="container">
+        <p class="section__index">04</p>
+        <h2 class="section__title">Get In <span class="accent">Touch</span></h2>
+        <p class="section__sub">Let's build something together.</p>
 
-      <div class="contact-grid">
-        <div class="contact-cards">
-          <a class="contact-card reveal" href="https://discord.com/users/000000000000000000" target="_blank" rel="noopener">
-            <span class="contact-ico">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.88-1.51.07.07 0 0 0-.08.04c-.21.37-.44.86-.6 1.25a18.27 18.27 0 0 0-5.44 0 12.6 12.6 0 0 0-.61-1.25.08.08 0 0 0-.08-.04 19.74 19.74 0 0 0-4.88 1.51.07.07 0 0 0-.03.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.05 19.9 19.9 0 0 0 6 3.03.08.08 0 0 0 .08-.03c.46-.63.87-1.3 1.23-2a.08.08 0 0 0-.04-.11 13.1 13.1 0 0 1-1.88-.9.08.08 0 0 1-.01-.13c.13-.1.25-.19.37-.29a.08.08 0 0 1 .08-.01c3.94 1.8 8.2 1.8 12.1 0a.08.08 0 0 1 .08.01c.12.1.25.2.38.29a.08.08 0 0 1-.01.13c-.6.35-1.23.65-1.88.9a.08.08 0 0 0-.04.11c.36.7.77 1.37 1.23 2a.08.08 0 0 0 .08.03 19.85 19.85 0 0 0 6.01-3.03.08.08 0 0 0 .03-.05c.5-5.19-.85-9.68-3.57-13.66a.06.06 0 0 0-.03-.03ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.96 0c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Z"/></svg>
-            </span>
-            <span class="contact-label">Discord</span>
-            <span class="contact-value">Piyush</span>
+        <div class="contact-grid">
+          <a class="contact-card" href="https://discord.com/users/89646078" target="_blank" rel="noopener">
+            <span class="contact-card__icon">🎮</span>
+            <b class="contact-card__label">Discord</b>
+            <span class="contact-card__value">@piyushkumarexe</span>
           </a>
-
-          <a class="contact-card reveal" href="https://github.com/" target="_blank" rel="noopener">
-            <span class="contact-ico">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.35.96.11-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-            </span>
-            <span class="contact-label">GitHub</span>
-            <span class="contact-value">GitHub</span>
+          <a class="contact-card" href="https://instagram.com/Piyushkumar.exee" target="_blank" rel="noopener">
+            <span class="contact-card__icon">📸</span>
+            <b class="contact-card__label">Instagram</b>
+            <span class="contact-card__value">@Piyushkumar.exee</span>
           </a>
-
-          <a class="contact-card reveal" href="https://open.spotify.com/user/you" target="_blank" rel="noopener">
-            <span class="contact-ico">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0Zm5.5 17.36c-.22.36-.7.47-1.06.25-2.9-1.77-6.55-2.17-10.85-1.19-.42.1-.83-.16-.93-.58-.1-.42.16-.83.58-.93 4.7-1.08 8.74-.61 12 1.37.36.22.47.71.26 1.08Zm1.47-3.27c-.28.45-.88.6-1.33.32-3.32-2.04-8.38-2.63-12.3-1.44-.52.16-1.06-.14-1.22-.66-.16-.52.14-1.06.66-1.22 4.48-1.36 10.06-.7 13.87 1.64.45.28.6.88.32 1.36Zm.13-3.4C15.29 8.2 8.6 8 4.75 9.17c-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 4.4-1.33 11.72-1.07 16.29 1.61.56.33.74 1.06.41 1.62-.33.55-1.06.73-1.62.4Z"/></svg>
-            </span>
-            <span class="contact-label">Spotify</span>
-            <span class="contact-value">Spotify</span>
+          <a class="contact-card" href="mailto:piyushpk811@gmail.com">
+            <span class="contact-card__icon">✉️</span>
+            <b class="contact-card__label">Email</b>
+            <span class="contact-card__value">piyushpk811@gmail.com</span>
+          </a>
+          <a class="contact-card" href="https://github.com/piyushkumarexe" target="_blank" rel="noopener">
+            <span class="contact-card__icon">🐙</span>
+            <b class="contact-card__label">GitHub</b>
+            <span class="contact-card__value">@piyushkumarexe</span>
           </a>
         </div>
 
-        <div class="contact-info reveal">
-          <div class="loc">
-            <span class="loc-ico">📍</span>
-            <div>
-              <div class="loc-label">Location</div>
-              <div class="loc-value">New Delhi, India · IST</div>
-            </div>
-          </div>
-          <h3>Need a custom Discord bot?</h3>
-          <p>Security systems, moderation tools, music bots, dashboards, or automation workflows — let's build something clean and scalable.</p>
-          <a class="btn btn-solid" href="mailto:you@example.com">Work With Me</a>
+        <div class="cta-banner">
+          <div class="cta-banner__icon">🚀</div>
+          <h3 class="cta-banner__title">Have an idea for an app or bot?</h3>
+          <p class="cta-banner__text">Mobile app, bot, or automation — let's build something clean and scalable.</p>
+          <a class="btn btn--primary" href="mailto:piyushpk811@gmail.com">Work With Me</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="footer-inner">
-      <a class="brand" href="#home">Piyush&nbsp;<span class="suffix">_._</span></a>
-      <p>Built with Python expertise &amp; shipped on the web. © 2026 Piyush Kr.</p>
-      <a class="to-top" href="#home">Back to top ↑</a>
+    <div class="container footer__inner">
+      <span>© 2026 Piyush Kumar</span>
+      <span>Coder &amp; Developer · India</span>
+      <a href="https://github.com/piyushkumarexe" target="_blank" rel="noopener">GitHub</a>
     </div>
   </footer>
 
-  <script src="assets/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
