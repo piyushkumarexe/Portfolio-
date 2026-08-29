@@ -15,9 +15,9 @@
     document.body.classList.add("is-loaded");
   };
   if (document.readyState === "complete") {
-    setTimeout(hideLoader, 350);
+    setTimeout(hideLoader, 1500);
   } else {
-    window.addEventListener("load", () => setTimeout(hideLoader, 350));
+    window.addEventListener("load", () => setTimeout(hideLoader, 1500));
     setTimeout(hideLoader, 2200); // fallback so it never sticks
   }
 
