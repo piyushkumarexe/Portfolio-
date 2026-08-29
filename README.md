@@ -60,7 +60,6 @@ Until then the card keeps its styled static fallback — nothing breaks.
 ### Assets
 
 - `assets/piyush-photo.png` — profile-card avatar (illustrated stand-in; auto-replaced by your real Discord photo once Lanyard is joined)
-- `assets/piyush-avatar.png` — your site logo (kept for reference)
 - `assets/rebiton-logo.png`, `assets/rebiton-banner.jpg` — Rebiton project card
 - `assets/ind-editor-logo.png`, `assets/ind-editor-banner.jpg` — IND Editor project card
 - To use your real selfie: GitHub → repo → `assets/` → **Add file → Upload files** → upload as `piyush-photo.png` (same name = instant swap, no code change).
