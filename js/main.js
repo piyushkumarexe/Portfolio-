@@ -173,6 +173,94 @@
     sections.forEach((s) => sio.observe(s));
   }
 
+  /* ---------- Discord live presence — Lanyard ---------- */
+  const DISCORD_ID = "1106606259454611507";
+  const $id = (x) => document.getElementById(x);
+  const navDot = document.querySelector(".nav__status-dot");
+  const navState = $id("navState");
+  const pcardDot = $id("pcardDot");
+  const dcEmoji = $id("dcEmoji");
+  const dcName = $id("dcName");
+  const dcState = $id("dcState");
+  const spEmoji = $id("spEmoji");
+  const spName = $id("spName");
+  const spState = $id("spState");
+  const spActivity = $id("spActivity");
+  const avatar = $id("pcardAvatar");
+
+  const PRESENCE = {
+    online: { label: "Online", cls: "", emoji: "💬", act: "Online — replies fast" },
+    idle: { label: "Idle", cls: "is-idle", emoji: "🌙", act: "Idle right now" },
+    dnd: { label: "Do Not Disturb", cls: "is-dnd", emoji: "⛔", act: "Focused — do not disturb" },
+    offline: { label: "Offline", cls: "is-offline", emoji: "😴", act: "Offline — ping me anytime" },
+  };
+
+  const swapAvatar = (url) => {
+    if (!avatar || avatar.dataset.src === url) return;
+    const probe = new Image();
+    probe.onload = () => { avatar.src = url; avatar.dataset.src = url; };
+    probe.src = url;
+  };
+
+  let spotifyLinked = false;
+  const loadPresence = async () => {
+    const ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+    const timer = ctrl ? setTimeout(() => ctrl.abort(), 5000) : null;
+    try {
+      const res = await fetch("https://api.lanyard.rest/v1/users/" + DISCORD_ID, {
+        signal: ctrl ? ctrl.signal : undefined,
+      });
+      const json = await res.json();
+      if (timer) clearTimeout(timer);
+      if (!json || !json.success || !json.data) return; // not monitored → keep static fallback
+      const d = json.data;
+      const cs = d.client_status || {};
+      const status = cs.desktop || cs.mobile || cs.web || "offline";
+      const p = PRESENCE[status] || PRESENCE.offline;
+
+      if (navDot) navDot.className = "nav__status-dot " + p.cls;
+      if (navState) navState.textContent = p.label;
+      if (pcardDot) {
+        pcardDot.className = "pcard__status-dot " + p.cls;
+        pcardDot.title = p.label;
+      }
+      if (dcEmoji) dcEmoji.textContent = p.emoji;
+      if (dcState) dcState.textContent = p.act;
+      if (dcName && d.user && (d.user.global_name || d.user.username)) {
+        dcName.textContent = "@" + (d.user.global_name || d.user.username);
+      }
+
+      // Real Discord avatar (falls back to site default if offline/CORS)
+      if (d.user) {
+        if (d.user.avatar) swapAvatar("https://cdn.discordapp.com/avatars/" + DISCORD_ID + "/" + d.user.avatar + ".png?size=256");
+        else swapAvatar("https://cdn.discordapp.com/embed/avatars/" + Number((BigInt(DISCORD_ID) >> 22n) % 6n) + ".png");
+      }
+
+      // Spotify (works when Lanyard is on and Spotify sharing is enabled)
+      if (d.spotify) {
+        if (spEmoji) spEmoji.textContent = "🎧";
+        if (spName) spName.textContent = d.spotify.song || "Playing";
+        if (spState) spState.textContent = d.spotify.artist || "on Spotify";
+        if (spActivity && d.spotify.track_id && !spotifyLinked) {
+          spotifyLinked = true;
+          spActivity.style.cursor = "pointer";
+          spActivity.title = "Open in Spotify";
+          spActivity.addEventListener("click", () =>
+            window.open("https://open.spotify.com/track/" + d.spotify.track_id, "_blank", "noopener")
+          );
+        }
+      } else {
+        if (spEmoji) spEmoji.textContent = "🎵";
+        if (spState) spState.textContent = "Not listening";
+      }
+    } catch (e) {
+      if (timer) clearTimeout(timer);
+      /* network/CORS/offline → static fallback stays */
+    }
+  };
+  loadPresence();
+  setInterval(loadPresence, 300000); // gentle refresh every 5 min
+
   /* ---------- Subtle tilt on profile card ---------- */
   const pcard = document.querySelector(".pcard");
   if (pcard && window.matchMedia("(pointer: fine)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {

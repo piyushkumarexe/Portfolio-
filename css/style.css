@@ -305,6 +305,24 @@ body::before {
 .project__ghost--sm { font-size: 110px; top: -16px; }
 .project > * { position: relative; z-index: 1; }
 .project__head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; flex-wrap: wrap; }
+.project__head > div { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; min-width: 0; }
+.project__logo {
+  width: 52px; height: 52px; flex: none; border-radius: 14px; object-fit: cover;
+  border: 1px solid var(--line-2); background: var(--panel-2);
+}
+.project--featured .project__logo { width: 60px; height: 60px; }
+.project__logo--mono {
+  display: grid; place-items: center;
+  font-family: var(--mono); font-weight: 700; font-size: 14px; letter-spacing: 0.04em;
+  color: var(--gold); background: var(--gold-dim); border-color: rgba(213, 179, 100, 0.35);
+}
+.project--featured .project__logo--mono { font-size: 16px; letter-spacing: 0.1em; }
+.project__media { margin: 20px 0 0; border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; }
+.project__media img {
+  display: block; width: 100%; height: auto; object-fit: cover;
+  aspect-ratio: 16 / 7; transition: transform 0.45s ease;
+}
+.project:hover .project__media img { transform: scale(1.035); }
 .project__title { font-family: var(--serif); font-size: clamp(24px, 3vw, 32px); font-weight: 800; }
 .project__desc { color: var(--muted); margin: 0 0 18px; font-size: 15px; max-width: 640px; }
 .project__desc strong { color: var(--cream); }
@@ -375,6 +393,13 @@ body::before {
 .footer__brand { font-family: var(--serif); font-size: 20px; font-weight: 800; }
 .footer__inner > span, .footer__inner > a { color: var(--dim); font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.04em; }
 .footer__top:hover { color: var(--gold-soft); }
+
+/* ---------- Presence status colors (set by js via Lanyard) ---------- */
+.nav__status-dot, .pcard__status-dot { background: var(--green); }
+.nav__status-dot.is-idle, .pcard__status-dot.is-idle { background: #f0b232; }
+.nav__status-dot.is-dnd, .pcard__status-dot.is-dnd { background: #e2504c; }
+.nav__status-dot.is-offline { background: #87898c; animation: none; }
+.pcard__status-dot.is-offline { background: #87898c; }
 
 /* ---------- Reveal ---------- */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.65s ease, transform 0.65s ease; }

@@ -41,7 +41,25 @@ All content lives in `index.html`. Key pieces:
 
 ### Contact details currently in the site
 
-- **Discord:** @piyushkumarexe
+- **Discord:** @piyushkumarexe (ID `1106606259454611507` — used for live presence)
 - **Instagram:** @Piyushkumar.exee
 - **Email:** piyushpk811@gmail.com
 - **GitHub:** @piyushkumarexe
+
+### Live Discord presence (Lanyard)
+
+`js/main.js` polls the [Lanyard](https://github.com/Phineas/lanyard) API to show your real
+status (online/idle/dnd/offline), your Discord avatar, name, and Spotify "now listening".
+To activate it once:
+
+1. Join the Lanyard Discord server: `discord.gg/lanyard` (stay in it — it only monitors members).
+2. For Spotify: connect Spotify to Discord, enable **Share my listening activity**, keep it playing.
+
+Until then the card keeps its styled static fallback — nothing breaks.
+
+### Assets
+
+- `assets/piyush-avatar.png` — default profile-card avatar (overridden by Discord avatar when live)
+- `assets/rebiton-logo.png`, `assets/rebiton-banner.png` — Rebiton project card
+- Replace any file 1:1 to swap branding — paths stay the same.
+

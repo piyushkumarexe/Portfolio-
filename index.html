@@ -38,7 +38,7 @@
        ============================================================ -->
   <header class="nav" id="nav">
     <a class="nav__brand" href="#hero" aria-label="Piyush Kumar — home">
-      <span class="nav__brand-serif">P<span class="gold">.</span>iyush</span>
+      <span class="nav__brand-serif">Piyush</span>
     </a>
 
     <nav class="nav__links" id="navLinks" aria-label="Primary">
@@ -49,9 +49,9 @@
     </nav>
 
     <div class="nav__actions">
-      <span class="nav__status" title="Local time in IST (UTC+5:30)">
+      <span class="nav__status" id="navStatus" title="Discord presence · Local time in IST (UTC+5:30)">
         <span class="nav__status-dot"></span>
-        <span>Online</span>
+        <span id="navState">Online</span>
         <span class="nav__status-sep">·</span>
         <time id="clock" datetime>IST —:—</time>
       </span>
@@ -104,8 +104,8 @@
             <div class="pcard__banner" aria-hidden="true"></div>
             <div class="pcard__body">
               <div class="pcard__avatar-wrap">
-                <img class="pcard__avatar" src="assets/piyush-avatar.png" alt="Piyush Kumar avatar" width="88" height="88" />
-                <span class="pcard__status-dot" title="Available"></span>
+                <img class="pcard__avatar" id="pcardAvatar" src="assets/piyush-avatar.png" alt="Piyush Kumar avatar" width="88" height="88" />
+                <span class="pcard__status-dot" id="pcardDot" title="Available"></span>
               </div>
 
               <div class="pcard__id">
@@ -120,10 +120,10 @@
               <div class="pcard__widget">
                 <p class="pcard__widget-label">Discord Activity</p>
                 <div class="pcard__activity">
-                  <span class="pcard__activity-emoji">💬</span>
+                  <span class="pcard__activity-emoji" id="dcEmoji">💬</span>
                   <div>
-                    <b>piyushkumarexe</b>
-                    <span>Open to work · replies fast</span>
+                    <b id="dcName">piyushkumarexe</b>
+                    <span id="dcState">Open to work · replies fast</span>
                   </div>
                 </div>
               </div>
@@ -131,18 +131,18 @@
               <div class="pcard__divider" aria-hidden="true"></div>
 
               <div class="pcard__widget">
-                <p class="pcard__widget-label">Currently</p>
-                <div class="pcard__activity">
-                  <span class="pcard__activity-emoji">⚡</span>
+                <p class="pcard__widget-label">Spotify</p>
+                <div class="pcard__activity" id="spActivity">
+                  <span class="pcard__activity-emoji" id="spEmoji">🎵</span>
                   <div>
-                    <b>Building an AI&nbsp;Agent</b>
-                    <span>Flutter · Node · Python</span>
+                    <b id="spName">Piyush</b>
+                    <span id="spState">Not listening</span>
                   </div>
                 </div>
               </div>
 
               <div class="pcard__btns">
-                <a class="btn btn--outline btn--sm" href="https://discord.com/users/89646078" target="_blank" rel="noopener">
+                <a class="btn btn--outline btn--sm" href="https://discord.com/users/1106606259454611507" target="_blank" rel="noopener">
                   <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52.07.07 0 0 0-.08.04c-.21.38-.44.87-.6 1.27a18.3 18.3 0 0 0-5.5 0 12 12 0 0 0-.62-1.27.08.08 0 0 0-.08-.04 19.7 19.7 0 0 0-4.88 1.52.07.07 0 0 0-.04.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.05A19.9 19.9 0 0 0 5.03 20a.08.08 0 0 0 .08-.03c.6-.82 1.14-1.69 1.6-2.6a.08.08 0 0 0-.04-.11 13 13 0 0 1-1.25-.6.08.08 0 0 1-.01-.13l.25-.19a.07.07 0 0 1 .08-.01 14.2 14.2 0 0 0 11.5 0 .07.07 0 0 1 .07.01l.26.19a.08.08 0 0 1 0 .12 12 12 0 0 1-1.28.61.08.08 0 0 0-.04.11c.46.91 1 1.78 1.6 2.6a.08.08 0 0 0 .08.03 19.8 19.8 0 0 0 4.9-1.88.08.08 0 0 0 .03-.05c.5-5.18-.84-9.68-3.55-13.66a.06.06 0 0 0-.03-.03ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42s.96-2.42 2.16-2.42 2.18 1.09 2.16 2.42-.96 2.42-2.16 2.42Zm7.96 0c-1.18 0-2.16-1.08-2.16-2.42s.96-2.42 2.16-2.42 2.18 1.09 2.16 2.42-.96 2.42-2.16 2.42Z"/></svg>
                   Discord
                 </a>
@@ -238,8 +238,11 @@
           <article class="project project--featured">
             <span class="project__ghost" aria-hidden="true">IND</span>
             <div class="project__head">
-              <span class="chip chip--amber">◐ Active — In Development</span>
-              <h3 class="project__title">IND Editor</h3>
+              <span class="project__logo project__logo--mono" aria-hidden="true">IND</span>
+              <div>
+                <span class="chip chip--amber">◐ Active — In Development</span>
+                <h3 class="project__title">IND Editor</h3>
+              </div>
             </div>
             <p class="project__desc">
               A Flutter video-editing app for short videos, reels and photo-video compositions —
@@ -263,8 +266,11 @@
           <article class="project">
             <span class="project__ghost project__ghost--sm" aria-hidden="true">R</span>
             <div class="project__head">
-              <span class="chip chip--green">● Active — Current</span>
-              <h3 class="project__title">Rebiton</h3>
+              <img class="project__logo" src="assets/rebiton-logo.png" alt="Rebiton logo" width="52" height="52" loading="lazy" />
+              <div>
+                <span class="chip chip--green">● Active — Current</span>
+                <h3 class="project__title">Rebiton</h3>
+              </div>
             </div>
             <p class="project__desc">
               An automatic <strong>AI agent bot</strong> — automates tasks, responds to commands and
@@ -277,6 +283,9 @@
               <li>🧠 <b>AI</b> automatic responses</li>
               <li>🔄 <b>Task</b> automation</li>
             </ul>
+            <figure class="project__media">
+              <img src="assets/rebiton-banner.png" alt="Rebiton banner" loading="lazy" />
+            </figure>
             <div class="project__actions">
               <a class="btn btn--outline btn--sm" href="https://github.com/piyushkumarexe" target="_blank" rel="noopener">View Project</a>
             </div>
@@ -286,8 +295,11 @@
           <article class="project">
             <span class="project__ghost project__ghost--sm" aria-hidden="true">⚙</span>
             <div class="project__head">
-              <span class="chip chip--gold">◆ Shipped · Clients</span>
-              <h3 class="project__title">Client Automations</h3>
+              <span class="project__logo project__logo--mono" aria-hidden="true">⚙</span>
+              <div>
+                <span class="chip chip--gold">◆ Shipped · Clients</span>
+                <h3 class="project__title">Client Automations</h3>
+              </div>
             </div>
             <p class="project__desc">
               Bots, scrapers and small utilities built and shipped for clients — moderation helpers,
@@ -298,7 +310,7 @@
             </div>
             <ul class="project__features">
               <li>✅ <b>Real</b> clients, real deadlines</li>
-              <li>️ <b>Custom</b> tooling per request</li>
+              <li> <b>Custom</b> tooling per request</li>
             </ul>
             <div class="project__actions">
               <a class="btn btn--outline btn--sm" href="#contact">Case Study</a>
@@ -358,7 +370,7 @@
         <h2 class="section__title">Get In Touch</h2>
 
         <div class="contact-grid">
-          <a class="contact-card" href="https://discord.com/users/89646078" target="_blank" rel="noopener">
+          <a class="contact-card" href="https://discord.com/users/1106606259454611507" target="_blank" rel="noopener">
             <span class="contact-card__icon">💬</span>
             <b class="contact-card__label">Discord</b>
             <span class="contact-card__value">piyushkumarexe</span>
@@ -399,7 +411,7 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <span class="footer__brand">P<span class="gold">.</span>iyush</span>
+      <span class="footer__brand">Piyush</span>
       <span>© 2026 Piyush Kumar · Built with plain HTML, CSS &amp; JS</span>
       <a href="#hero" class="footer__top">Back to top ↑</a>
     </div>
