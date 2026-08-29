@@ -1,5 +1,7 @@
 /* ============================================================
-   Piyush.dev — Portfolio scripts
+   Piyush Kumar — Portfolio scripts
+   Loader · live IST clock · mobile nav · reveal · counters ·
+   active section · profile-card tilt
    ============================================================ */
 
 (function () {
@@ -12,12 +14,29 @@
     loader.classList.add("is-hidden");
     document.body.classList.add("is-loaded");
   };
-  // Hide after window load, or after a safe fallback delay.
   if (document.readyState === "complete") {
-    setTimeout(hideLoader, 400);
+    setTimeout(hideLoader, 350);
   } else {
-    window.addEventListener("load", () => setTimeout(hideLoader, 400));
-    setTimeout(hideLoader, 2500); // fallback
+    window.addEventListener("load", () => setTimeout(hideLoader, 350));
+    setTimeout(hideLoader, 2200); // fallback so it never sticks
+  }
+
+  /* ---------- Live IST clock (nav) ---------- */
+  const clock = document.getElementById("clock");
+  if (clock) {
+    const fmt = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Asia/Kolkata",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
+    const tick = () => {
+      const time = fmt.format(new Date());
+      clock.textContent = "IST " + time;
+      clock.setAttribute("datetime", time);
+    };
+    tick();
+    setInterval(tick, 15000);
   }
 
   /* ---------- Mobile nav ---------- */
@@ -37,9 +56,7 @@
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
       navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     });
-    // Close when a link is tapped.
     navLinks.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeNav));
-    // Close on outside click / escape.
     document.addEventListener("click", (e) => {
       if (
         !navLinks.classList.contains("is-open") ||
@@ -54,23 +71,32 @@
     });
   }
 
-  /* ---------- Sticky nav shadow on scroll ---------- */
+  /* ---------- Sticky nav shadow ---------- */
   const nav = document.getElementById("nav");
   const onScroll = () => {
     if (!nav) return;
-    if (window.scrollY > 12) {
-      nav.style.boxShadow = "0 8px 24px rgba(0,0,0,0.35)";
-    } else {
-      nav.style.boxShadow = "none";
-    }
+    nav.style.boxShadow = window.scrollY > 12 ? "0 10px 30px rgba(0,0,0,0.5)" : "none";
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ---------- Reveal on scroll ---------- */
-  const revealEls = document.querySelectorAll(".section > .container, .hero__content, .hero__side");
-  revealEls.forEach((el) => el.classList.add("reveal"));
+  /* ---------- Reveal on scroll (with light stagger) ---------- */
+  const heroContent = document.querySelector(".hero__content");
+  const heroSide = document.querySelector(".hero__side");
+  if (heroContent) heroContent.classList.add("reveal");
+  if (heroSide) heroSide.classList.add("reveal", "reveal--d1");
 
+  document.querySelectorAll(".section").forEach((sec) => {
+    const kids = sec.querySelectorAll(
+      ".card, .project, .timeline__item, .contact-card, .loc-card, .cta-banner, .stats, .section__index, .section__title"
+    );
+    kids.forEach((el, i) => {
+      el.classList.add("reveal");
+      if (i > 0) el.classList.add("reveal--d" + Math.min(i, 3));
+    });
+  });
+
+  const revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
       (entries) => {
@@ -81,28 +107,25 @@
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.12 }
     );
     revealEls.forEach((el) => io.observe(el));
   } else {
     revealEls.forEach((el) => el.classList.add("is-visible"));
   }
 
-  /* ---------- Animated counters ---------- */
+  /* ---------- Animated counters (stats) ---------- */
   const counters = document.querySelectorAll(".stat__num");
 
   const animateCounter = (el) => {
     const target = parseInt(el.dataset.target, 10) || 0;
     const suffix = el.dataset.suffix || "";
-    const duration = 1200;
+    const duration = 1100;
     const start = performance.now();
-
     const tick = (now) => {
       const progress = Math.min((now - start) / duration, 1);
-      // easeOutCubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const value = Math.round(eased * target);
-      el.textContent = value + suffix;
+      const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+      el.textContent = Math.round(eased * target) + suffix;
       if (progress < 1) requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
@@ -127,18 +150,42 @@
     });
   }
 
+  /* ---------- Active section highlight in nav ---------- */
+  if ("IntersectionObserver" in window && navLinks) {
+    const map = {};
+    navLinks.querySelectorAll("a").forEach((a) => {
+      map[a.getAttribute("href").slice(1)] = a;
+    });
+    const sections = Object.keys(map)
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+    const sio = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          Object.values(map).forEach((a) => a.classList.remove("is-active"));
+          const link = map[entry.target.id];
+          if (link) link.classList.add("is-active");
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+    sections.forEach((s) => sio.observe(s));
+  }
+
   /* ---------- Subtle tilt on profile card ---------- */
-  const statusCard = document.querySelector(".status-card");
-  if (statusCard && window.matchMedia("(pointer: fine)").matches) {
-    statusCard.addEventListener("mousemove", (e) => {
-      const rect = statusCard.getBoundingClientRect();
+  const pcard = document.querySelector(".pcard");
+  if (pcard && window.matchMedia("(pointer: fine)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    pcard.addEventListener("mousemove", (e) => {
+      const rect = pcard.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
-      statusCard.style.transform =
-        "perspective(800px) rotateY(" + x * 5 + "deg) rotateX(" + -y * 5 + "deg)";
+      pcard.style.transform =
+        "perspective(900px) rotateY(" + x * 4 + "deg) rotateX(" + -y * 4 + "deg)";
     });
-    statusCard.addEventListener("mouseleave", () => {
-      statusCard.style.transform = "";
+    pcard.addEventListener("mouseleave", () => {
+      pcard.style.transform = "";
     });
+    pcard.style.transition = "transform 0.25s ease";
   }
 })();
