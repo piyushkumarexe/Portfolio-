@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piyush Kumar — Coder & Developer</title>
+  <meta name="description" content="Piyush Kumar — Coder & Developer building apps, bots, and automations. India." />
+  <meta name="author" content="Piyush Kumar" />
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf6'/%3E%3Cstop offset='1' stop-color='%2367e8f9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0f'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='800' font-size='26' fill='url(%23g)' text-anchor='middle'%3EPK%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ============================================================
+       LOADING
+       ============================================================ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <span class="loader--logo">Piyush.dev</span>
+    <span class="loader--text">Loading portfolio</span>
+  </div>
+
+  <a class="skip-link" href="#hero">Skip to content</a>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#hero" aria-label="Piyush Kumar home">
+      <img class="nav__logo" src="assets/piyush-avatar.png" alt="" width="34" height="34" />
+      <span class="nav__brand-text">Piyush<span class="accent">.dev</span></span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="#skills">Stack</a>
+      <a href="#projects">Projects</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="btn btn--ghost" href="https://github.com/piyushkumarexe" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero" id="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="chip"><span class="chip__dot"></span> Coder &amp; Developer · India</span>
+
+          <h1 class="hero__name">
+            Piyush&nbsp;<span class="accent">Kumar</span>
+          </h1>
+          <p class="hero__meta">
+            <span>@piyushkumarexe</span> <span class="dot">·</span>
+            <span>building apps &amp; bots</span> <span class="dot">·</span>
+            <span>IST</span>
+          </p>
+
+          <p class="hero__desc">
+            I build <strong>mobile apps, Discord bots, and automations</strong> — from Flutter video
+            editors to production AI agents. I like clean code, real products, and shipping things
+            people actually use.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="https://github.com/piyushkumarexe" target="_blank" rel="noopener">View Projects</a>
+            <a class="btn btn--outline" href="#contact">Get In Touch</a>
+          </div>
+
+          <!-- Stats -->
+          <div class="stats" role="list">
+            <div class="stat" role="listitem">
+              <b class="stat__num" data-target="4" data-suffix="+">0</b>
+              <span class="stat__label">Projects Built</span>
+            </div>
+            <div class="stat" role="listitem">
+              <b class="stat__num" data-target="3" data-suffix="+">0</b>
+              <span class="stat__label">Clients Served</span>
+            </div>
+            <div class="stat" role="listitem">
+              <b class="stat__num" data-target="1" data-suffix="yr">0</b>
+              <span class="stat__label">Experience</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status card -->
+        <div class="hero__side">
+          <div class="status-card">
+            <div class="status-card__top">
+              <img class="status-card__avatar" src="assets/piyush-avatar.png" alt="Piyush Kumar avatar" width="88" height="88" />
+              <div class="status-card__id">
+                <h2 class="status-card__name">Piyush</h2>
+                <p class="status-card__role">Developer · Coder</p>
+              </div>
+            </div>
+
+            <div class="status-card__row">
+              <span>📍</span> India
+            </div>
+
+            <div class="status-widget">
+              <div class="status-widget__head">
+                <span class="status-widget__title">Currently</span>
+                <span class="status-widget__dot"></span>
+              </div>
+              <p class="status-widget__text">Building an <strong>AI Agent</strong> · learning Flutter &amp; full-stack.</p>
+              <div class="status-widget__tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Node</span>
+                <span class="tag">Python</span>
+              </div>
+            </div>
+
+            <div class="socials">
+              <a class="socials__link" href="https://github.com/piyushkumarexe" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+              </a>
+              <a class="socials__link" href="https://instagram.com/Piyushkumar.exee" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a class="socials__link" href="mailto:piyushpk811@gmail.com" aria-label="Email">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg>
+              </a>
+              <a class="socials__link" href="https://discord.com/users/89646078" target="_blank" rel="noopener" aria-label="Discord">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52.07.07 0 0 0-.08.04c-.21.38-.44.87-.6 1.27a18.3 18.3 0 0 0-5.5 0 12 12 0 0 0-.62-1.27.08.08 0 0 0-.08-.04 19.7 19.7 0 0 0-4.88 1.52.07.07 0 0 0-.04.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.05A19.9 19.9 0 0 0 5.03 20a.08.08 0 0 0 .08-.03c.6-.82 1.14-1.69 1.6-2.6a.08.08 0 0 0-.04-.11 13 13 0 0 1-1.25-.6.08.08 0 0 1-.01-.13l.25-.19a.07.07 0 0 1 .08-.01 14.2 14.2 0 0 0 11.5 0 .07.07 0 0 1 .07.01l.26.19a.08.08 0 0 1 0 .12 12 12 0 0 1-1.28.61.08.08 0 0 0-.04.11c.46.91 1 1.78 1.6 2.6a.08.08 0 0 0 .08.03 19.8 19.8 0 0 0 4.9-1.88.08.08 0 0 0 .03-.05c.5-5.18-.84-9.68-3.55-13.66a.06.06 0 0 0-.03-.03ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42s.96-2.42 2.16-2.42 2.18 1.09 2.16 2.42-.96 2.42-2.16 2.42Zm7.96 0c-1.18 0-2.16-1.08-2.16-2.42s.96-2.42 2.16-2.42 2.18 1.09 2.16 2.42-.96 2.42-2.16 2.42Z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         01 — STACK
+         ============================================================ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <p class="section__index">01</p>
+        <h2 class="section__title">Skills &amp; <span class="accent">Stack</span></h2>
+        <p class="section__sub">The tools I reach for.</p>
+
+        <div class="grid">
+          <article class="card">
+            <span class="card__icon">📱</span>
+            <h3 class="card__title">Mobile</h3>
+            <p class="card__text">Cross-platform &amp; native Android apps.</p>
+            <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Kotlin</span><span class="tag">Compose</span></div>
+          </article>
+
+          <article class="card">
+            <span class="card__icon">🤖</span>
+            <h3 class="card__title">Bots &amp; AI</h3>
+            <p class="card__text">Discord bots and AI agents.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">discord.py</span><span class="tag">Node.js</span><span class="tag">AI Agents</span></div>
+          </article>
+
+          <article class="card">
+            <span class="card__icon">⚡</span>
+            <h3 class="card__title">Web &amp; Backend</h3>
+            <p class="card__text">Responsive frontends and APIs.</p>
+            <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">HTML/CSS/JS</span></div>
+          </article>
+
+          <article class="card">
+            <span class="card__icon">🗄️</span>
+            <h3 class="card__title">Databases &amp; Tools</h3>
+            <p class="card__text">Data, auth, and the daily toolchain.</p>
+            <div class="tags"><span class="tag">MongoDB</span><span class="tag">MySQL</span><span class="tag">Firebase</span><span class="tag">Git &amp; GitHub</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         02 — PROJECTS
+         ============================================================ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <p class="section__index">02</p>
+        <h2 class="section__title">Projects</h2>
+        <p class="section__sub">Things I've built and shipped.</p>
+
+        <div class="projects">
+          <!-- IND Editor -->
+          <article class="project">
+            <div class="project__banner banner--ind" aria-hidden="true">
+              <span class="project__monogram">IND</span>
+            </div>
+            <div class="project__body">
+              <div class="project__head">
+                <span class="chip chip--active"><span class="chip__dot"></span> In Development</span>
+                <h3 class="project__title">IND Editor</h3>
+              </div>
+              <p class="project__desc">
+                A Flutter video-editing app for short videos, reels, and photo-video compositions. Timeline,
+                transitions, filters, text packs, PIP, audio &amp; up to 1080p/120fps export.
+              </p>
+              <div class="tags">
+                <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Firebase</span><span class="tag">FFmpeg</span>
+              </div>
+              <ul class="project__features">
+                <li>🎞️ Timeline &amp; clip editing</li>
+                <li>✨ Transitions &amp; effects</li>
+                <li>🔤 Text packs &amp; overlays</li>
+              </ul>
+              <div class="project__actions">
+                <a class="btn btn--outline" href="https://github.com/piyushkumarexe/IND-Editor-" target="_blank" rel="noopener">View Project</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Rebiton -->
+          <article class="project">
+            <div class="project__banner banner--rebiton" aria-hidden="true">
+              <span class="project__monogram">R</span>
+            </div>
+            <div class="project__body">
+              <div class="project__head">
+                <span class="chip chip--status"><span class="chip__dot"></span> Active</span>
+                <h3 class="project__title">Rebiton</h3>
+              </div>
+              <p class="project__desc">
+                An automatic <strong>AI agent</strong> bot — automates tasks, responds to commands, and helps run
+                communities without constant manual effort.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">discord.py</span><span class="tag">AI Agent</span><span class="tag">Automation</span>
+              </div>
+              <ul class="project__features">
+                <li>🧠 Automatic AI responses</li>
+                <li>🔄 Task automation</li>
+                <li>🛡️ Community tools</li>
+              </ul>
+              <div class="project__actions">
+                <a class="btn btn--outline" href="https://github.com/piyushkumarexe" target="_blank" rel="noopener">View Project</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="more-projects">
+          <a class="btn btn--ghost" href="https://github.com/piyushkumarexe" target="_blank" rel="noopener">More on GitHub →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         03 — JOURNEY
+         ============================================================ -->
+    <section class="section" id="journey">
+      <div class="container">
+        <p class="section__index">03</p>
+        <h2 class="section__title">Journey</h2>
+        <p class="section__sub">The road so far.</p>
+
+        <ol class="timeline">
+          <li class="timeline__item">
+            <div class="timeline__year">Start</div>
+            <div class="timeline__card">
+              <h3 class="timeline__title">Started Coding</h3>
+              <p class="timeline__text">Picked up Python and JavaScript and fell in love with building things that run.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__year">2024</div>
+            <div class="timeline__card">
+              <h3 class="timeline__title">First Real Apps</h3>
+              <p class="timeline__text">Moved from experiments to actual products — learned end-to-end shipping.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__year">2025</div>
+            <div class="timeline__card">
+              <h3 class="timeline__title">IND Editor &amp; Rebiton</h3>
+              <p class="timeline__text">Built a Flutter video editor and an AI agent bot, and started taking on clients.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__year">Now</div>
+            <div class="timeline__card">
+              <h3 class="timeline__title">Building the Next Thing</h3>
+              <p class="timeline__text">Going deeper into full-stack and AI — shipping more real products.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         04 — CONTACT
+         ============================================================ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <p class="section__index">04</p>
+        <h2 class="section__title">Get In <span class="accent">Touch</span></h2>
+        <p class="section__sub">Let's build something together.</p>
+
+        <div class="contact-grid">
+          <a class="contact-card" href="https://discord.com/users/89646078" target="_blank" rel="noopener">
+            <span class="contact-card__icon">🎮</span>
+            <b class="contact-card__label">Discord</b>
+            <span class="contact-card__value">@piyushkumarexe</span>
+          </a>
+          <a class="contact-card" href="https://instagram.com/Piyushkumar.exee" target="_blank" rel="noopener">
+            <span class="contact-card__icon">📸</span>
+            <b class="contact-card__label">Instagram</b>
+            <span class="contact-card__value">@Piyushkumar.exee</span>
+          </a>
+          <a class="contact-card" href="mailto:piyushpk811@gmail.com">
+            <span class="contact-card__icon">✉️</span>
+            <b class="contact-card__label">Email</b>
+            <span class="contact-card__value">piyushpk811@gmail.com</span>
+          </a>
+          <a class="contact-card" href="https://github.com/piyushkumarexe" target="_blank" rel="noopener">
+            <span class="contact-card__icon">🐙</span>
+            <b class="contact-card__label">GitHub</b>
+            <span class="contact-card__value">@piyushkumarexe</span>
+          </a>
+        </div>
+
+        <div class="cta-banner">
+          <div class="cta-banner__icon">🚀</div>
+          <h3 class="cta-banner__title">Have an idea for an app or bot?</h3>
+          <p class="cta-banner__text">Mobile app, bot, or automation — let's build something clean and scalable.</p>
+          <a class="btn btn--primary" href="mailto:piyushpk811@gmail.com">Work With Me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 Piyush Kumar</span>
+      <span>Coder &amp; Developer · India</span>
+      <a href="https://github.com/piyushkumarexe" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
