@@ -88,7 +88,7 @@
 
   document.querySelectorAll(".section").forEach((sec) => {
     const kids = sec.querySelectorAll(
-      ".card, .project, .timeline__item, .contact-card, .loc-card, .cta-banner, .stats, .section__index, .section__title"
+      ".card, .project, .timeline__item, .contact-card, .loc-card, .cta-banner, .stats, .section__index, .section__title, .shot, .feat, .spec, .dl-row, .note-card"
     );
     kids.forEach((el, i) => {
       el.classList.add("reveal");
@@ -260,6 +260,69 @@
   };
   loadPresence();
   setInterval(loadPresence, 300000); // gentle refresh every 5 min
+
+  /* ---------- Screenshot lightbox (project case-study pages) ---------- */
+  const lb = document.getElementById("lightbox");
+  const shotFrames = Array.prototype.slice.call(document.querySelectorAll("[data-shot]"));
+
+  if (lb && shotFrames.length) {
+    const lbImg = document.getElementById("lbImg");
+    const lbCap = document.getElementById("lbCap");
+    const lbPrev = document.getElementById("lbPrev");
+    const lbNext = document.getElementById("lbNext");
+    const lbClose = document.getElementById("lbClose");
+    let index = 0;
+    let lastFocus = null;
+
+    const show = (i) => {
+      index = (i + shotFrames.length) % shotFrames.length;
+      const frame = shotFrames[index];
+      const img = frame.querySelector("img");
+      if (!img) return;
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt || "";
+      lbCap.textContent = frame.dataset.caption || "";
+    };
+
+    const openLb = (i) => {
+      lastFocus = document.activeElement;
+      show(i);
+      lb.classList.add("is-open");
+      lb.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      lbClose.focus();
+    };
+
+    const closeLb = () => {
+      lb.classList.remove("is-open");
+      lb.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    };
+
+    shotFrames.forEach((frame, i) => {
+      frame.addEventListener("click", () => openLb(i));
+      frame.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openLb(i);
+        }
+      });
+    });
+
+    lbPrev.addEventListener("click", () => show(index - 1));
+    lbNext.addEventListener("click", () => show(index + 1));
+    lbClose.addEventListener("click", closeLb);
+    lb.addEventListener("click", (e) => {
+      if (e.target === lb) closeLb();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (!lb.classList.contains("is-open")) return;
+      if (e.key === "Escape") closeLb();
+      if (e.key === "ArrowLeft") show(index - 1);
+      if (e.key === "ArrowRight") show(index + 1);
+    });
+  }
 
   /* ---------- Subtle tilt on profile card ---------- */
   const pcard = document.querySelector(".pcard");

@@ -80,7 +80,7 @@
        LOADER
        ============================================================ -->
   <div class="loader" id="loader" aria-hidden="true">
-    <span class="loader--logo">Piyush&nbsp;<em>_</em>.<em>_</em></span>
+    <span class="loader--logo">Piyush&nbsp;<em>&lt;/&gt;</em></span>
     <div class="loader--bar" aria-hidden="true"><span></span></div>
     <span class="loader--text">Loading portfolio</span>
   </div>
@@ -288,6 +288,40 @@
         <h2 class="section__title">Projects</h2>
 
         <div class="projects">
+          <!-- Tourism — featured -->
+          <article class="project project--featured">
+            <span class="project__ghost" aria-hidden="true">TOUR</span>
+            <div class="project__head">
+              <img class="project__logo" src="assets/tourism-logo.png" alt="Tourism app logo" width="60" height="60" loading="lazy" />
+              <div>
+                <span class="chip chip--green">● Active — Shipped on Android</span>
+                <h3 class="project__title">Tourism</h3>
+              </div>
+            </div>
+            <p class="project__desc">
+              A <strong>smart tourism &amp; safety assistant</strong> for Android — live Google Maps,
+              an <strong>NVIDIA-powered AI guide</strong>, geofenced safety zones with real
+              notifications, one-tap SOS, a QR-verified Digital Emergency ID and an Eco Score.
+              Every API key lives server-side in Firebase Cloud Functions; the app ships with zero secrets.
+            </p>
+            <div class="tags">
+              <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Firebase</span><span class="tag">Google Maps</span><span class="tag">NVIDIA AI</span><span class="tag">Node 20</span>
+            </div>
+            <ul class="project__features">
+              <li>🛡️ <b>Geofenced</b> safety zones &amp; SOS</li>
+              <li>🤖 <b>AI guide</b> + itinerary generator</li>
+              <li>🆔 <b>Digital ID</b> with QR verification</li>
+            </ul>
+            <figure class="project__media">
+              <img src="assets/tourism-banner.jpg" alt="Tourism — Smart Travel &amp; Safety Assistant" loading="lazy" />
+            </figure>
+            <div class="project__actions">
+              <a class="btn btn--gold btn--sm" href="projects/tourism.html">View Case Study</a>
+              <a class="btn btn--outline btn--sm" href="https://github.com/piyushkumarexe/travelling/releases/download/apk-latest/yatrawise-arm64-v8a.apk" rel="noopener">Download APK</a>
+              <a class="btn btn--outline btn--sm" href="https://github.com/piyushkumarexe/travelling" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
           <!-- IND Editor — featured -->
           <article class="project project--featured">
             <span class="project__ghost" aria-hidden="true">IND</span>

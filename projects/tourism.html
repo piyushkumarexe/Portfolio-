@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tourism — Smart Travel &amp; Safety Assistant | Piyush Kumar</title>
+  <meta name="description" content="Tourism is a Flutter Android app by Piyush Kumar: live Google Maps, NVIDIA AI travel assistant, geofenced safety zones, one-tap SOS, QR-verified Digital Emergency ID and Eco Score — with every API key behind Firebase Cloud Functions." />
+  <meta name="author" content="Piyush Kumar" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0a0908" />
+  <link rel="canonical" href="https://piyushsdevportfolio.vercel.app/projects/tourism" />
+  <!-- Open Graph / social sharing -->
+  <meta property="og:title" content="Tourism — Smart Travel &amp; Safety Assistant" />
+  <meta property="og:description" content="Flutter Android app: live maps, NVIDIA AI guide, geofenced safety zones, SOS, Digital Emergency ID and Eco Score." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://piyushsdevportfolio.vercel.app/projects/tourism" />
+  <meta property="og:site_name" content="Piyush Kumar Portfolio" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:image" content="https://piyushsdevportfolio.vercel.app/assets/tourism-banner.jpg" />
+  <meta property="og:image:alt" content="Tourism — Smart Travel &amp; Safety Assistant" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1400" />
+  <meta property="og:image:height" content="613" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tourism — Smart Travel &amp; Safety Assistant" />
+  <meta name="twitter:description" content="Flutter Android app: live maps, NVIDIA AI guide, geofenced safety zones, SOS, Digital Emergency ID and Eco Score." />
+  <meta name="twitter:image" content="https://piyushsdevportfolio.vercel.app/assets/tourism-banner.jpg" />
+  <meta name="twitter:image:alt" content="Tourism — Smart Travel &amp; Safety Assistant" />
+  <!-- Structured data for the app and the case-study page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://piyushsdevportfolio.vercel.app/projects/tourism#app",
+        "name": "Tourism",
+        "alternateName": "Tourism — Smart Travel & Safety Assistant",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "Android 7.0+",
+        "softwareVersion": "apk-latest (build 301)",
+        "url": "https://piyushsdevportfolio.vercel.app/projects/tourism",
+        "downloadUrl": "https://github.com/piyushkumarexe/travelling/releases/tag/apk-latest",
+        "installUrl": "https://github.com/piyushkumarexe/travelling/releases/download/apk-latest/yatrawise-arm64-v8a.apk",
+        "codeRepository": "https://github.com/piyushkumarexe/travelling",
+        "programmingLanguage": ["Dart", "JavaScript"],
+        "description": "A native Android tourism app built with Flutter: live Google Maps, an NVIDIA-powered AI travel assistant, geofenced safety zones with notifications, one-tap SOS, AI incident triage, a QR-verified Digital Emergency ID and an Eco Score.",
+        "image": "https://piyushsdevportfolio.vercel.app/assets/tourism-banner.jpg",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+        "author": { "@id": "https://piyushsdevportfolio.vercel.app/#piyush-kumar" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://piyushsdevportfolio.vercel.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://piyushsdevportfolio.vercel.app/#projects" },
+          { "@type": "ListItem", "position": 3, "name": "Tourism" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0908'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-weight='800' font-size='30' fill='%23d5b364' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts: Playfair Display (serif display) + Inter (body) + JetBrains Mono (labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;0,900;1,700;1,800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <!-- ============================================================
+       LOADER
+       ============================================================ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <span class="loader--logo">Piyush&nbsp;<em>&lt;/&gt;</em></span>
+    <div class="loader--bar" aria-hidden="true"><span></span></div>
+    <span class="loader--text">Loading project</span>
+  </div>
+
+  <a class="skip-link" href="#hero">Skip to content</a>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="../index.html" aria-label="Piyush Kumar — home">
+      <span class="nav__brand-serif">Piyush</span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="../index.html#skills">Stack</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#journey">Journey</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <span class="nav__status" id="navStatus" title="Discord presence · Local time in IST (UTC+5:30)">
+        <span class="nav__status-dot"></span>
+        <span id="navState">Online</span>
+        <span class="nav__status-sep">·</span>
+        <time id="clock" datetime>IST —:—</time>
+      </span>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <nav class="crumbs" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span aria-hidden="true">/</span>
+            <a href="../index.html#projects">Projects</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">Tourism</span>
+          </nav>
+
+          <p class="kicker"><span class="kicker__line" aria-hidden="true"></span>Case Study · Android App · Flutter</p>
+
+          <h1 class="hero__name hero__name--project">
+            Tour<em class="hero__name-accent">ism.</em>
+          </h1>
+
+          <p class="hero__sub">Smart Travel &amp; Safety Assistant</p>
+
+          <p class="hero__meta">
+            <span>app.roamio.tourism</span><span class="dot">·</span>
+            <span>Android 7.0+</span><span class="dot">·</span>
+            <span>Flutter 3.32 / Dart 3.8</span>
+          </p>
+
+          <p class="hero__desc">
+            A native Android app that pairs a premium travel experience with <strong>real safety
+            tooling</strong> — live Google Maps, an <strong>NVIDIA-powered AI guide</strong>,
+            geofenced safety zones with Android notifications, a one-tap SOS flow, AI incident
+            triage, a QR-verified Digital Emergency ID and an Eco Score. No demo buttons, no fake
+            data, no "coming soon" screens — every feature is wired end-to-end.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--gold" href="https://github.com/piyushkumarexe/travelling/releases/download/apk-latest/yatrawise-arm64-v8a.apk" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M5 20h14v-2H5v2ZM19 9h-4V3H9v6H5l7 7 7-7Z"/></svg>
+              Download APK
+            </a>
+            <a class="btn btn--outline" href="https://github.com/piyushkumarexe/travelling" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+              View on GitHub
+            </a>
+            <a class="btn btn--outline" href="#screenshots">Screenshots</a>
+          </div>
+        </div>
+
+        <!-- App release card -->
+        <aside class="hero__side" aria-label="Release information">
+          <div class="pcard">
+            <div class="pcard__banner pcard__banner--app" aria-hidden="true"></div>
+            <div class="pcard__body">
+              <div class="pcard__avatar-wrap">
+                <img class="pcard__avatar pcard__avatar--app" src="../assets/tourism-logo.png" alt="Tourism app icon" width="92" height="92" />
+                <span class="pcard__status-dot" title="Build passing"></span>
+              </div>
+
+              <div class="pcard__id">
+                <h2 class="pcard__name">Tourism</h2>
+                <span class="pcard__role">Android</span>
+              </div>
+
+              <p class="pcard__loc">📍 Built in Lucknow · Shipped via GitHub Actions</p>
+
+              <div class="pcard__divider" aria-hidden="true"></div>
+
+              <div class="pcard__widget">
+                <p class="pcard__widget-label">Latest Build</p>
+                <dl style="margin:0">
+                  <div class="pcard__kv"><dt>Release</dt><dd>apk-latest · run #301</dd></div>
+                  <div class="pcard__kv"><dt>Package</dt><dd>app.roamio.tourism</dd></div>
+                  <div class="pcard__kv"><dt>Min SDK</dt><dd>24 · Android 7.0</dd></div>
+                  <div class="pcard__kv"><dt>Pipeline</dt><dd>analyze → test → build</dd></div>
+                </dl>
+              </div>
+
+              <div class="pcard__divider" aria-hidden="true"></div>
+
+              <div class="pcard__widget">
+                <p class="pcard__widget-label">Repository</p>
+                <div class="pcard__activity">
+                  <span class="pcard__activity-emoji">🧭</span>
+                  <div>
+                    <b>piyushkumarexe/travelling</b>
+                    <span>Dart · public · active</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pcard__btns">
+                <a class="btn btn--gold btn--sm" href="#download">Get the APK</a>
+                <a class="btn btn--outline btn--sm" href="https://github.com/piyushkumarexe/travelling" target="_blank" rel="noopener">Source</a>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Stats band -->
+      <div class="container">
+        <div class="stats" role="list" aria-label="Project numbers">
+          <div class="stat" role="listitem">
+            <b class="stat__num" data-target="14" data-suffix="">14</b>
+            <span class="stat__label">Feature Areas</span>
+          </div>
+          <div class="stat" role="listitem">
+            <b class="stat__num" data-target="4" data-suffix="">4</b>
+            <span class="stat__label">APK Variants</span>
+          </div>
+          <div class="stat" role="listitem">
+            <b class="stat__num" data-target="3" data-suffix="">3</b>
+            <span class="stat__label">AI Pipelines</span>
+          </div>
+          <div class="stat" role="listitem">
+            <b class="stat__num" data-target="0" data-suffix="">0</b>
+            <span class="stat__label">Keys In The APK</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         01 — OVERVIEW
+         ============================================================ -->
+    <section class="section" id="overview">
+      <div class="container">
+        <p class="section__index">01</p>
+        <h2 class="section__title">Overview</h2>
+
+        <div class="grid">
+          <article class="card">
+            <span class="card__icon">🧭</span>
+            <h3 class="card__title">The Problem</h3>
+            <p class="card__text">
+              Travellers in India juggle a maps app, a weather app, a translator, a review site and
+              a notes app — and still have nothing useful when something actually goes wrong.
+              Safety information is scattered, and emergency details live on paper.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card__icon">🛠️</span>
+            <h3 class="card__title">The Build</h3>
+            <p class="card__text">
+              One Flutter app with fourteen real feature areas, a Firebase backend and three AI
+              pipelines. Every card on the dashboard navigates to a working screen; every network
+              call hits a live API with proper loading, empty and error states.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card__icon">🔐</span>
+            <h3 class="card__title">The Constraint</h3>
+            <p class="card__text">
+              No third-party secret ever ships to a device. NVIDIA, OpenWeather and the Google
+              server key live only in Cloud Functions, and Firestore rules enforce every
+              permission server-side — not just in the UI.
+            </p>
+          </article>
+        </div>
+
+        <div class="note-card">
+          <span class="note-card__icon">✅</span>
+          <div>
+            <p>
+              <strong>Everything is real and wired end-to-end.</strong> There are no demo buttons,
+              no mock data and no placeholder screens. When the network fails the app says so and
+              offers a retry — it never invents a result, and the SOS flow never claims that
+              authorities were contacted when they were not.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         02 — SCREENSHOTS
+         ============================================================ -->
+    <section class="section" id="screenshots">
+      <div class="container">
+        <p class="section__index">02</p>
+        <h2 class="section__title">Screenshots</h2>
+        <p class="shots-hint">Tap any screen to open it full size · 7 of the app's 14 feature areas</p>
+
+        <div class="shots" id="shots">
+          <figure class="shot">
+            <div class="shot__frame" role="button" tabindex="0" data-shot="0"
+                 data-caption="Home dashboard — live location, weather, safety status, SOS and quick actions">
+              <img src="../assets/tourism/home.webp" alt="Tourism home dashboard showing live weather, safety status, the SOS card and the quick-actions grid" width="975" height="2110" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="shot__cap"><b>Home dashboard</b>Weather, safety status, SOS &amp; quick actions</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="shot__frame" role="button" tabindex="0" data-shot="1"
+                 data-caption="Map & routes — Google Maps SDK with colour-coded safety zones and a real Directions polyline">
+              <img src="../assets/tourism/map.webp" alt="Tourism map screen with colour-coded safety zone circles, place markers and a route polyline" width="975" height="2110" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="shot__cap"><b>Map &amp; routes</b>Safety zones, markers &amp; live GPS</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="shot__frame" role="button" tabindex="0" data-shot="2"
+                 data-caption="AI Tourism Assistant — NVIDIA Llama 3.1 70B with your location and preferences as context">
+              <img src="../assets/tourism/assistant.webp" alt="Tourism AI tourism assistant chat answering a question about night-time safety" width="975" height="2110" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="shot__cap"><b>AI assistant</b>NVIDIA Llama 3.1 70B, location-aware</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="shot__frame" role="button" tabindex="0" data-shot="3"
+                 data-caption="Safety hub — geofence monitoring, configured zones and callable emergency services">
+              <img src="../assets/tourism/safety.webp" alt="Tourism safety hub listing configured safety zones and nearby emergency services with call buttons" width="975" height="2110" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="shot__cap"><b>Safety hub</b>Geofence monitor &amp; emergency services</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="shot__frame" role="button" tabindex="0" data-shot="4"
+                 data-caption="Digital Emergency ID — the QR carries only a 64-character verification token">
+              <img src="../assets/tourism/digital-id.webp" alt="Tourism digital emergency ID card showing a QR code, active status and verification token" width="975" height="2110" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="shot__cap"><b>Digital Emergency ID</b>QR holds a token, never your data</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="shot__frame" role="button" tabindex="0" data-shot="5"
+                 data-caption="Eco Score — GPS-tracked walk and cycle sessions with points, levels and badges">
+              <img src="../assets/tourism/eco.webp" alt="Tourism eco score screen with points, level progress, badges and recent GPS-tracked activity" width="975" height="2110" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="shot__cap"><b>Eco Score</b>GPS-tracked sessions, levels &amp; badges</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="shot__frame" role="button" tabindex="0" data-shot="6"
+                 data-caption="Explore — real Google Places search with categories, ratings and distance">
+              <img src="../assets/tourism/explore.webp" alt="Tourism explore screen listing nearby attractions with ratings, distance and navigate buttons" width="975" height="2110" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="shot__cap"><b>Explore</b>Google Places search &amp; categories</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         03 — TECHNOLOGY STACK
+         ============================================================ -->
+    <section class="section" id="stack">
+      <div class="container">
+        <p class="section__index">03</p>
+        <h2 class="section__title">Technology Stack</h2>
+
+        <div class="grid">
+          <article class="card">
+            <span class="card__icon">📱</span>
+            <h3 class="card__title">Client — Flutter</h3>
+            <p class="card__text">
+              Flutter 3.32 on Dart 3.8 with Material 3, GoRouter for navigation and a lightweight
+              service container instead of a DI framework. Native Android project targeting
+              Android 7.0 and up.
+            </p>
+            <div class="tags"><span class="tag">Flutter 3.32</span><span class="tag">Dart 3.8</span><span class="tag">Material 3</span><span class="tag">GoRouter</span><span class="tag">geolocator</span><span class="tag">mobile_scanner</span></div>
+          </article>
+
+          <article class="card">
+            <span class="card__icon">☁️</span>
+            <h3 class="card__title">Backend — Firebase</h3>
+            <p class="card__text">
+              Cloud Functions v2 on Node 20 act as the only API gateway. Authentication uses Google
+              sign-in; Firestore and Storage hold app data behind security rules that are enforced
+              server-side, including the admin role.
+            </p>
+            <div class="tags"><span class="tag">Cloud Functions v2</span><span class="tag">Node 20</span><span class="tag">Firestore</span><span class="tag">Storage</span><span class="tag">Auth</span><span class="tag">Security Rules</span></div>
+          </article>
+
+          <article class="card">
+            <span class="card__icon">🧠</span>
+            <h3 class="card__title">AI &amp; External APIs</h3>
+            <p class="card__text">
+              NVIDIA's Llama 3.1 70B instruct drives chat, itinerary JSON and incident triage.
+              Google Places, Directions and Geocoding plus OpenWeather are proxied through the
+              backend so their keys never reach the device.
+            </p>
+            <div class="tags"><span class="tag">NVIDIA Llama 3.1 70B</span><span class="tag">Google Maps SDK</span><span class="tag">Places API</span><span class="tag">Directions API</span><span class="tag">OpenWeather</span></div>
+          </article>
+        </div>
+
+        <div class="specs" style="margin-top:20px">
+          <div class="spec">
+            <p class="spec__label">Package</p>
+            <p class="spec__value"><code>app.roamio.tourism</code></p>
+          </div>
+          <div class="spec">
+            <p class="spec__label">Primary Language</p>
+            <p class="spec__value">Dart <span style="color:var(--dim)">· Node for functions</span></p>
+          </div>
+          <div class="spec">
+            <p class="spec__label">CI / CD</p>
+            <p class="spec__value">GitHub Actions <span style="color:var(--dim)">· analyze + test + APK</span></p>
+          </div>
+          <div class="spec">
+            <p class="spec__label">Secrets In App</p>
+            <p class="spec__value">None <span style="color:var(--dim)">· all server-side</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         04 — MAJOR FEATURES
+         ============================================================ -->
+    <section class="section" id="features">
+      <div class="container">
+        <p class="section__index">04</p>
+        <h2 class="section__title">Major Features</h2>
+
+        <div class="feats">
+          <article class="feat">
+            <span class="feat__icon">🏠</span>
+            <div>
+              <h3 class="feat__title">Home Dashboard</h3>
+              <p class="feat__text">
+                Live location label, real weather, safety-zone status for your exact position,
+                nearby attractions, latest alerts and one-tap access to SOS, Emergency ID and
+                incident reporting. <strong>Every card navigates to a working feature.</strong>
+              </p>
+            </div>
+          </article>
+
+          <article class="feat">
+            <span class="feat__icon">🗺️</span>
+            <div>
+              <h3 class="feat__title">Map &amp; Routes</h3>
+              <p class="feat__text">
+                Official Google Maps SDK with a live GPS dot, search markers, attractions,
+                colour-coded safety circles and emergency services. Routes use a real
+                <strong>Directions API polyline</strong>, with an honestly-labelled straight-line
+                fallback when none is available.
+              </p>
+            </div>
+          </article>
+
+          <article class="feat">
+            <span class="feat__icon">🔎</span>
+            <div>
+              <h3 class="feat__title">Explore Places</h3>
+              <p class="feat__text">
+                Real Google Places text search plus category browsing for attractions, food and
+                hidden gems — with proxied photos, ratings, price level, open/closed state,
+                distance from you and <strong>hand-off to Google Maps navigation</strong>.
+              </p>
+            </div>
+          </article>
+
+          <article class="feat">
+            <span class="feat__icon">🤖</span>
+            <div>
+              <h3 class="feat__title">AI Tourism Assistant</h3>
+              <p class="feat__text">
+                Conversational AI over NVIDIA Llama 3.1 70B with your current location and travel
+                preferences injected as context. Typing indicator, suggestion chips and
+                <strong>explicit error states</strong> when the model is unreachable.
+              </p>
+            </div>
+          </article>
+
+          <article class="feat">
+            <span class="feat__icon">🧳</span>
+            <div>
+              <h3 class="feat__title">Itinerary Generator</h3>
+              <p class="feat__text">
+                Destination, days, interests, budget and travel style become a real AI-generated
+                plan returned as structured JSON. Preview, regenerate, <strong>save to
+                Firestore</strong>, browse day by day, or delete.
+              </p>
+            </div>
+          </article>
+
+          <article class="feat">
+            <span class="feat__icon">🛡️</span>
+            <div>
+              <h3 class="feat__title">Safety Hub &amp; Geofencing</h3>
+              <p class="feat__text">
+                Nearest active zone, full zone list and a live geofence monitor. Entering a
+                high-risk zone fires an in-app warning plus a real
+                <strong>Android notification</strong>, and nearby emergency services are callable
+                with <code>tel:</code> links.
+              </p>
+            </div>
+          </article>
+
+          <article class="feat">
+            <span class="feat__icon">🆘</span>
+            <div>
+              <h3 class="feat__title">One-Tap SOS</h3>
+              <p class="feat__text">
+                Confirm dialog → real GPS fix → an <strong>emergencyEvents</strong> record → an
+                active-status screen with coordinates and accuracy, plus callable services nearby.
+                It never claims the authorities were contacted.
+              </p>
+            </div>
+          </article>
+
+          <article class="feat">
+            <span class="feat__icon">📣</span>
+            <div>
+              <h3 class="feat__title">Incident Reporting + AI Triage</h3>
+              <p class="feat__text">
+                Description, photo, video and location upload to Firebase Storage with type and
+                size validation, then NVIDIA triage returns a <strong>category, severity, summary
+                and recommended action</strong> that is stored for history and admin review.
+              </p>
+            </div>
+          </article>
+
+          <article class="feat">
+            <span class="feat__icon">🆔</span>
+            <div>
+              <h3 class="feat__title">Digital Emergency ID</h3>
+              <p class="feat__text">
+                A profile record whose QR code carries <strong>only a random 64-character
+                token</strong> — never personal data. Active/revoked states, copy-token, and a
+                real verification screen that scans with <code>mobile_scanner</code> and checks Firestore live.
+              </p>
+            </div>
+          </article>
+
+          <article class="feat">
+            <span class="feat__icon">🌿</span>
+            <div>
+              <h3 class="feat__title">Eco Score</h3>
+              <p class="feat__text">
+                GPS-tracked walking and cycling sessions accumulate real distance, or log an
+                activity manually. Points, levels and badges persist in Firestore, with sessions
+                under 50 m rejected rather than <strong>silently inflating your score</strong>.
+              </p>
+            </div>
+          </article>
+
+          <article class="feat">
+            <span class="feat__icon">⛅</span>
+            <div>
+              <h3 class="feat__title">Weather &amp; Notifications</h3>
+              <p class="feat__text">
+                Current conditions and a 5-day OpenWeather forecast with practical safety notes and
+                full loading/error/retry states, plus a <strong>per-user notification history</strong>
+                across safety, geofence, incident, emergency and weather events.
+              </p>
+            </div>
+          </article>
+
+          <article class="feat">
+            <span class="feat__icon">🧑‍💼</span>
+            <div>
+              <h3 class="feat__title">Profile &amp; Admin Console</h3>
+              <p class="feat__text">
+                Name, photo, language, emergency contact and travel preferences in Firestore. The
+                admin area — incidents, safety zones and SOS events — is role-gated in the app
+                <strong>and enforced by security rules</strong>, so tampering with the UI changes nothing.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         05 — ARCHITECTURE & SECURITY
+         ============================================================ -->
+    <section class="section" id="architecture">
+      <div class="container">
+        <p class="section__index">05</p>
+        <h2 class="section__title">Architecture &amp; Security</h2>
+
+        <div class="grid">
+          <article class="card">
+            <span class="card__icon">🧱</span>
+            <h3 class="card__title">Layered Client</h3>
+            <p class="card__text">
+              The Flutter app splits into <b>core</b> (theme, router, services, widgets),
+              <b>data</b> (models and repositories) and <b>features</b> (one folder per screen
+              group), so a feature can be read top-to-bottom without hunting across the tree.
+            </p>
+            <ul class="bullets">
+              <li><b>app_shell</b> — bottom nav, SOS bridge, geofence alerts</li>
+              <li><b>repositories</b> — the only place that talks to Firebase</li>
+              <li><b>state_views</b> — shared loading, empty and error screens</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="card__icon">🔑</span>
+            <h3 class="card__title">Secrets Stay Server-Side</h3>
+            <p class="card__text">
+              The APK ships with zero third-party keys. Cloud Functions hold them as Firebase
+              secrets and act as the single gateway, with per-user rate limits that clients are
+              denied from reading.
+            </p>
+            <ul class="bullets">
+              <li><b>NVIDIA</b>, <b>OpenWeather</b>, <b>Maps server key</b> — functions only</li>
+              <li>Maps <b>client</b> key is Android-restricted by package + SHA-1</li>
+              <li><b>rateLimits</b> collection is backend-only by rule</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="card__icon">🚦</span>
+            <h3 class="card__title">Shipping Pipeline</h3>
+            <p class="card__text">
+              GitHub Actions runs <b>analyze &amp; test</b> (<code>flutter analyze --fatal-warnings</code>
+              plus <code>flutter test</code>) before a release build on JDK 17, then publishes
+              split APKs with checksums.
+            </p>
+            <ul class="bullets">
+              <li>Per-ABI splits + a universal fallback</li>
+              <li><b>SHA256SUMS.txt</b> published with every build</li>
+              <li>Signature fingerprint printed in the release notes</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="note-card">
+          <span class="note-card__icon">🗄️</span>
+          <div>
+            <p>
+              <strong>Firestore model.</strong> Incidents, safety zones and emergency events are
+              top-level collections; itineraries, notifications and eco activities are nested under
+              <code>users/{uid}</code>; digital IDs are keyed by a verification token. Admin access
+              is a <code>role</code> field on the user document that the rules check on every write —
+              never a flag the client can set.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         06 — DOWNLOAD
+         ============================================================ -->
+    <section class="section" id="download">
+      <div class="container">
+        <p class="section__index">06</p>
+        <h2 class="section__title">Download &amp; Build</h2>
+
+        <div class="dl">
+          <div class="dl-row dl-row--rec">
+            <span class="dl__name">arm64-v8a.apk</span>
+            <span class="dl__size">50 MB</span>
+            <span class="dl__for">✅ Almost all phones from 2017 onwards — download this one</span>
+            <a class="btn btn--gold btn--sm" href="https://github.com/piyushkumarexe/travelling/releases/download/apk-latest/yatrawise-arm64-v8a.apk" rel="noopener">Download</a>
+          </div>
+
+          <div class="dl-row">
+            <span class="dl__name">armeabi-v7a.apk</span>
+            <span class="dl__size">44 MB</span>
+            <span class="dl__for">Older 32-bit devices only</span>
+            <a class="btn btn--outline btn--sm" href="https://github.com/piyushkumarexe/travelling/releases/download/apk-latest/yatrawise-armeabi-v7a.apk" rel="noopener">Download</a>
+          </div>
+
+          <div class="dl-row">
+            <span class="dl__name">x86_64.apk</span>
+            <span class="dl__size">53 MB</span>
+            <span class="dl__for">Emulators and rare x86 devices</span>
+            <a class="btn btn--outline btn--sm" href="https://github.com/piyushkumarexe/travelling/releases/download/apk-latest/yatrawise-x86_64.apk" rel="noopener">Download</a>
+          </div>
+
+          <div class="dl-row">
+            <span class="dl__name">universal.apk</span>
+            <span class="dl__size">119 MB</span>
+            <span class="dl__for">Fallback that runs everywhere — biggest file</span>
+            <a class="btn btn--outline btn--sm" href="https://github.com/piyushkumarexe/travelling/releases/download/apk-latest/yatrawise-universal.apk" rel="noopener">Download</a>
+          </div>
+
+          <div class="dl-row">
+            <span class="dl__name">SHA256SUMS.txt</span>
+            <span class="dl__size">—</span>
+            <span class="dl__for">Checksums to verify your download</span>
+            <a class="btn btn--outline btn--sm" href="https://github.com/piyushkumarexe/travelling/releases/download/apk-latest/SHA256SUMS.txt" rel="noopener">Open</a>
+          </div>
+        </div>
+
+        <div class="note-card">
+          <span class="note-card__icon">📲</span>
+          <div>
+            <p>
+              <strong>Installing.</strong> Uninstall any older Tourism build first, download over
+              Wi-Fi, then tap the file and allow <em>Install unknown apps</em>. A "problem parsing
+              the package" message almost always means a truncated download — re-download and check
+              the size against <code>SHA256SUMS.txt</code>.
+            </p>
+            <p>
+              <strong>Building it yourself.</strong> <code>flutter pub get</code> then
+              <code>flutter build apk --release</code>, or trigger the <em>Build APK</em> workflow
+              on GitHub. The app needs your own Firebase project plus the NVIDIA, OpenWeather and
+              Google Maps keys set as function secrets — the repo README walks through it.
+            </p>
+          </div>
+        </div>
+
+        <div class="cta-banner">
+          <h3 class="cta-banner__title">Want something like this built?</h3>
+          <p class="cta-banner__text">Mobile apps, AI integrations, maps &amp; safety tooling, or a backend that keeps your keys where they belong — let's talk.</p>
+          <a class="btn btn--gold" href="mailto:piyushpk811@gmail.com">Work With Me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__brand">Piyush</span>
+      <span>© 2026 Piyush Kumar · Built with plain HTML, CSS &amp; JS</span>
+      <a href="../index.html#projects" class="footer__top">← All projects</a>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       LIGHTBOX
+       ============================================================ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" aria-hidden="true">
+    <button class="lightbox__btn lightbox__close" id="lbClose" type="button" aria-label="Close viewer">✕</button>
+    <button class="lightbox__btn" id="lbPrev" type="button" aria-label="Previous screenshot">‹</button>
+    <img id="lbImg" src="" alt="" />
+    <button class="lightbox__btn" id="lbNext" type="button" aria-label="Next screenshot">›</button>
+    <p class="lightbox__cap" id="lbCap"></p>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
