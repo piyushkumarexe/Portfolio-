@@ -456,3 +456,211 @@ body::before {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ============================================================
+   PROJECT CASE STUDY (projects/*.html)
+   Additive only — reuses the same tokens, type scale, radii,
+   easing and breakpoints as the main page. No rule above this
+   block is modified or overridden.
+   ============================================================ */
+
+/* ---------- Crumbs ---------- */
+.crumbs {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 0 0 18px;
+  font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--dim);
+}
+.crumbs a { color: var(--muted); transition: color 0.2s ease; }
+.crumbs a:hover { color: var(--gold-soft); }
+.crumbs span[aria-current] { color: var(--gold); }
+
+/* ---------- Project hero (same scale, tuned for a long name) ---------- */
+.hero__name--project { font-size: clamp(46px, 7.4vw, 88px); margin-top: 22px; }
+.hero__sub {
+  margin: 18px 0 0; font-family: var(--serif); font-style: italic;
+  font-size: clamp(19px, 2.6vw, 26px); font-weight: 700; color: var(--gold-soft); line-height: 1.3;
+}
+
+/* ---------- App card (mirrors the profile card) ---------- */
+.pcard__banner--app {
+  background:
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0 12px, transparent 12px 26px),
+    linear-gradient(120deg, #11231f, #0c1513);
+}
+.pcard__avatar--app { border-radius: 22px; object-fit: contain; padding: 4px; }
+.pcard__kv { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; padding: 7px 0; }
+.pcard__kv + .pcard__kv { border-top: 1px solid var(--line); }
+.pcard__kv dt {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.17em;
+  text-transform: uppercase; color: var(--dim); flex: none;
+}
+.pcard__kv dd {
+  margin: 0; font-family: var(--mono); font-size: 12.5px; color: var(--cream);
+  text-align: right; word-break: break-word;
+}
+
+/* ---------- Screenshot gallery ---------- */
+.shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.shot { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.shot__frame {
+  position: relative; border-radius: 22px; padding: 7px;
+  background: linear-gradient(150deg, #22201c, #0f0e0d);
+  border: 1px solid var(--line-2);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.45);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  cursor: zoom-in;
+}
+.shot__frame:hover,
+.shot__frame:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(213, 179, 100, 0.45);
+  box-shadow: 0 28px 56px rgba(0, 0, 0, 0.55);
+  outline: none;
+}
+.shot__frame img {
+  width: 100%; height: auto; display: block; border-radius: 16px;
+  aspect-ratio: 390 / 844; object-fit: cover; background: #f6f8f7;
+}
+.shot__cap {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em;
+  color: var(--muted); line-height: 1.55;
+}
+.shot__cap b { display: block; color: var(--cream); font-weight: 600; margin-bottom: 2px; }
+.shots-hint {
+  margin: 0 0 26px; color: var(--dim); font-family: var(--mono);
+  font-size: 12.5px; letter-spacing: 0.04em;
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 9998;
+  display: flex; align-items: center; justify-content: center; gap: 22px;
+  padding: 28px 20px;
+  background: rgba(6, 5, 5, 0.94);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+.lightbox.is-open { opacity: 1; visibility: visible; }
+.lightbox img {
+  max-height: 84vh; max-width: min(92vw, 380px); width: auto;
+  border-radius: 18px; border: 1px solid var(--line-2);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+}
+.lightbox__cap {
+  position: absolute; left: 0; right: 0; bottom: 22px; text-align: center;
+  font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted);
+}
+.lightbox__btn {
+  width: 46px; height: 46px; flex: none; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line-2);
+  color: var(--cream); font-size: 19px; line-height: 1;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.lightbox__btn:hover { border-color: var(--gold); color: var(--gold-soft); background: var(--gold-dim); }
+.lightbox__close { position: absolute; top: 20px; right: 20px; }
+
+/* ---------- Feature grid ---------- */
+.feats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.feat {
+  display: flex; gap: 16px; padding: 22px 24px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+.feat:hover { transform: translateY(-4px); border-color: rgba(213, 179, 100, 0.4); background: var(--panel-2); }
+.feat__icon {
+  width: 42px; height: 42px; flex: none; border-radius: 12px;
+  display: grid; place-items: center; font-size: 20px;
+  background: var(--gold-dim); border: 1px solid rgba(213, 179, 100, 0.26);
+}
+.feat__title { font-family: var(--serif); font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+.feat__text { color: var(--muted); margin: 0; font-size: 14px; line-height: 1.7; }
+.feat__text strong { color: var(--cream); font-weight: 600; }
+
+/* ---------- Spec / fact strip ---------- */
+.specs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.spec {
+  padding: 20px 22px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--panel);
+  transition: border-color 0.2s ease;
+}
+.spec:hover { border-color: rgba(213, 179, 100, 0.35); }
+.spec__label {
+  margin: 0 0 6px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--dim);
+}
+.spec__value { margin: 0; font-size: 15px; font-weight: 600; color: var(--cream); line-height: 1.5; }
+.spec__value code {
+  font-family: var(--mono); font-size: 13px; color: var(--gold-soft);
+  word-break: break-all; font-weight: 500;
+}
+
+/* ---------- Download table ---------- */
+.dl { display: grid; gap: 12px; }
+.dl-row {
+  display: grid; grid-template-columns: minmax(0, 1.5fr) 92px minmax(0, 1.4fr) auto;
+  align-items: center; gap: 18px;
+  padding: 18px 22px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--panel);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.dl-row:hover { transform: translateY(-3px); border-color: rgba(213, 179, 100, 0.45); background: var(--panel-2); }
+.dl-row--rec { border-color: rgba(213, 179, 100, 0.4); background:
+  repeating-linear-gradient(135deg, rgba(213, 179, 100, 0.045) 0 14px, transparent 14px 30px), var(--panel); }
+.dl__name { font-family: var(--mono); font-size: 13.5px; font-weight: 600; color: var(--cream); word-break: break-all; }
+.dl__size { font-family: var(--mono); font-size: 13px; color: var(--gold-soft); }
+.dl__for { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+
+/* ---------- Note / callout ---------- */
+.note-card {
+  display: flex; gap: 16px; align-items: flex-start;
+  margin-top: 18px; padding: 20px 24px;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--panel);
+}
+.note-card__icon { font-size: 20px; line-height: 1.4; flex: none; }
+.note-card p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.7; }
+.note-card p + p { margin-top: 10px; }
+.note-card strong { color: var(--cream); font-weight: 600; }
+
+/* Inline code inside case-study copy */
+.note-card code,
+.feat__text code,
+.card__text code,
+.bullets code,
+.dl__for code {
+  font-family: var(--mono); font-size: 13px; color: var(--gold-soft);
+  background: rgba(213, 179, 100, 0.08); padding: 2px 6px; border-radius: 5px;
+  word-break: break-word;
+}
+
+/* ---------- Prose list used inside cards ---------- */
+.bullets { display: grid; gap: 9px; margin-top: 14px; }
+.bullets li { position: relative; padding-left: 20px; color: var(--muted); font-size: 14.5px; line-height: 1.7; }
+.bullets li::before { content: "▸"; position: absolute; left: 0; top: 0; color: var(--gold); }
+.bullets b { color: var(--cream); font-weight: 600; }
+
+/* ---------- Responsive (matches the main page breakpoints) ---------- */
+@media (max-width: 1020px) {
+  .shots { grid-template-columns: repeat(3, 1fr); }
+  .specs { grid-template-columns: repeat(2, 1fr); }
+  .feats { grid-template-columns: 1fr; }
+  .dl-row { grid-template-columns: minmax(0, 1fr) auto; gap: 10px 16px; }
+  .dl__for { grid-column: 1 / -1; }
+  .dl-row .btn { grid-column: 1 / -1; justify-content: center; }
+}
+@media (max-width: 640px) {
+  /* Two columns stay all the way down: the shots are thumbnails that open
+     in the lightbox, so one-per-row would make the page endlessly long. */
+  .shots { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .specs { grid-template-columns: 1fr; }
+  .shot__frame { padding: 5px; border-radius: 18px; }
+  .shot__frame img { border-radius: 13px; }
+  .shot__cap { font-size: 11.5px; }
+  .lightbox { gap: 10px; padding: 20px 10px; }
+  .lightbox__btn { width: 40px; height: 40px; }
+  .feat { padding: 20px; gap: 14px; }
+  .dl-row { padding: 16px 18px; }
+}
