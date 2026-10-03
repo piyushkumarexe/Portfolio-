@@ -71,7 +71,11 @@ body::before {
   font-family: var(--serif); font-size: 40px; font-weight: 800; letter-spacing: 0.01em;
   color: var(--cream);
 }
-.loader--logo em { font-style: normal; color: var(--gold); animation: blink 1s steps(2) infinite; }
+.loader--logo em {
+  font-family: var(--mono); font-style: normal; font-weight: 700;
+  font-size: 0.66em; letter-spacing: -0.02em; vertical-align: 0.1em;
+  color: var(--gold); animation: blink 1s steps(2) infinite;
+}
 .loader--bar { width: 160px; height: 1px; background: var(--line-2); }
 .loader--bar span {
   display: block; width: 0; height: 100%; background: var(--gold);
