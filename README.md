@@ -36,7 +36,7 @@ Home-page content lives in `index.html`; each case study is one file in `project
 - Hero name, kicker, meta, description, profile card → `index.html`
 - Stats numbers (`data-target` / `data-suffix`) → `index.html`
 - Projects, tags & links → `index.html`
-- YatraWise case study → `projects/yatrawise.html`
+- Tourism case study → `projects/tourism.html`
 - Contact links (Discord, GitHub, Instagram, Email) → `index.html`
 - Theme tokens (colors, fonts, radii) → `css/style.css` (`:root`)
 - Loader, IST clock, nav, reveal, counters, tilt, screenshot lightbox → `js/main.js`
@@ -63,19 +63,19 @@ Until then the card keeps its styled static fallback — nothing breaks.
 
 | Project | Card | Detail page |
 | --- | --- | --- |
-| **YatraWise — Tourism** (Flutter Android app: maps, AI guide, safety zones, SOS, Digital ID, Eco Score) | `index.html` (first, featured) | [`projects/yatrawise.html`](projects/yatrawise.html) → `/projects/yatrawise` |
+| **Tourism** (Flutter Android app: maps, AI guide, safety zones, SOS, Digital ID, Eco Score) | `index.html` (first, featured) | [`projects/tourism.html`](projects/tourism.html) → `/projects/tourism` |
 | **IND Editor** (Flutter video editor) | `index.html` (featured) | — |
 | **Rebiton** (AI agent bot) | `index.html` | — |
 | **Client Automations** | `index.html` | — |
 
-The YatraWise case study links to the source at
+The Tourism case study links to the source at
 [`piyushkumarexe/travelling`](https://github.com/piyushkumarexe/travelling) and to the
 per-ABI release APKs published by GitHub Actions under the
 [`apk-latest`](https://github.com/piyushkumarexe/travelling/releases/tag/apk-latest) tag.
 
 ### Adding another case study
 
-Copy `projects/yatrawise.html`, swap the copy and assets, then:
+Copy `projects/tourism.html`, swap the copy and assets, then:
 
 1. add the project card at the top of `.projects` in `index.html`,
 2. drop the screenshots in `assets/<project>/`,
@@ -89,7 +89,7 @@ No CSS or JS changes are needed — the case-study styles and the lightbox are a
 - `assets/piyush-photo.png` — profile-card avatar (illustrated stand-in; auto-replaced by your real Discord photo once Lanyard is joined)
 - `assets/rebiton-logo.png`, `assets/rebiton-banner.jpg` — Rebiton project card
 - `assets/ind-editor-logo.png`, `assets/ind-editor-banner.jpg` — IND Editor project card
-- `assets/yatrawise-logo.png`, `assets/yatrawise-banner.jpg` — YatraWise project card
-- `assets/yatrawise/*.webp` — seven app screenshots used by the case-study gallery and lightbox
+- `assets/tourism-logo.png`, `assets/tourism-banner.jpg` — Tourism project card
+- `assets/tourism/*.webp` — seven app screenshots used by the case-study gallery and lightbox
 - To use your real selfie: GitHub → repo → `assets/` → **Add file → Upload files** → upload as `piyush-photo.png` (same name = instant swap, no code change).
 
