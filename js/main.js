@@ -7,6 +7,20 @@
 (function () {
   "use strict";
 
+  /* ---------- Privacy-aware visitor diagnostics ---------- */
+  if (
+    window.location.protocol === "https:" &&
+    navigator.doNotTrack !== "1"
+  ) {
+    fetch("/api/visitor", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: "{}",
+      credentials: "same-origin",
+      keepalive: true,
+    }).catch(() => {});
+  }
+
   /* ---------- Loader ---------- */
   const loader = document.getElementById("loader");
   const hideLoader = () => {
