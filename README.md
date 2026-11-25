@@ -23,11 +23,14 @@ A dark, editorial single-page portfolio in a **serif + gold "Discord developer" 
 python3 -m http.server 8080     # or: npx serve .
 ```
 
-Then visit <http://localhost:8080>.
+Then visit <http://localhost:8080>. The simple Python server does not support Vercel's
+clean URLs, so open <http://localhost:8080/projects/tourism.html> directly for the case
+study. Use Vercel locally or in production to test the `/projects/tourism` link.
 
 ## 📦 Deploy
 
-Fully static — deploy the folder to **Cloudflare Pages**, **Vercel**, **Netlify**, or **GitHub Pages** (no build command needed).
+Fully static — deploy to **Vercel** with no build command. Other static hosts require
+equivalent clean-URL routing for `/projects/tourism` and the preferred-domain redirect.
 
 ## ✏️ Editing
 
@@ -93,3 +96,18 @@ No CSS or JS changes are needed — the case-study styles and the lightbox are a
 - `assets/tourism/*.webp` — seven app screenshots used by the case-study gallery and lightbox
 - To use your real selfie: GitHub → repo → `assets/` → **Add file → Upload files** → upload as `piyush-photo.png` (same name = instant swap, no code change).
 
+
+## Search visibility
+
+The canonical site is `https://www.piyushsdevportfolio.dev/`. The homepage and Tourism page
+include unique titles, descriptions, social sharing metadata and structured data; `robots.txt`
+and `sitemap.xml` point to the same domain. Update these URLs if the production domain changes.
+The statistics count projects overall; the projects section is a selection rather than a list
+of every project.
+
+After deployment, confirm the custom domain and HTTPS work in Vercel. The apex domain redirects to
+the `www` domain in Vercel, and `vercel.json` redirects the public Vercel domain to it. Verify
+`https://www.piyushsdevportfolio.dev/` in Google Search Console (the existing verification tag is
+preserved), submit `https://www.piyushsdevportfolio.dev/sitemap.xml`, and request indexing of the
+homepage and case study. Google controls indexing and rankings, so neither immediate indexing
+nor a first-place result can be guaranteed.
